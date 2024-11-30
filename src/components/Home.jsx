@@ -65,7 +65,7 @@ const Home = () => {
             className="text-6xl md:text-8xl font-extrabold bg-clip-text text-opacity-4"
             variants={{
               hidden: { scale: 0.8, opacity: 0 },
-              visible: { scale: 1, opacity: 0.65 },
+              visible: { scale: 1, opacity: 0.85 },
             }}
             transition={{
               duration: 1.2,
@@ -79,7 +79,7 @@ const Home = () => {
             className="text-2xl md:text-3xl mt-4 text-gray-300"
             variants={{
               hidden: { opacity: 0, y: 20 },
-              visible: { opacity: 0.65, y: 0 },
+              visible: { opacity: 0.85, y: 0 },
             }}
             transition={{
               duration: 1,

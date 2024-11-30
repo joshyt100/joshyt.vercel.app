@@ -1,25 +1,38 @@
 import React from 'react';
-import CanvasBackground from './components/CanvasBackground';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Projects from './components/Projects';
-import ParticleBackground from './components/ParticleBackground';
+import Contact from './components/Contact';
 import ParticlesComponent from './components/ParticlesComponent';
-//import './App.scss';
 
 function App() {
   return (
-    <div className="app-container">
-      {/* Canvas Background */}
-      <ParticlesComponent />
+    <Router>
+      <div className="app-container">
+        {/* Navbar */}
+        <Navbar />
 
-      {/* Navbar */}
-      <Navbar />
-
-      {/* Main Content */}
-      <Home />
-      <Projects />
-    </div>
+        {/* Define Routes */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <ParticlesComponent />
+                <div id="home">
+                  <Home />
+                </div>
+                <div id="projects">
+                  <Projects />
+                </div>
+              </>
+            }
+          />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
