@@ -1,10 +1,13 @@
 module.exports = {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}", // Adjust the path based on your project structure
-    './src/styles/**/*.scss'
+    './src/styles/**/*.scss',
   ],
   theme: {
     extend: {
+      spacing: {
+        '30': '7rem',
+      },
       keyframes: {
         gradient: {
           '0%': { backgroundPosition: '0% 50%' },

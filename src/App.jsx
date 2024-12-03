@@ -23,7 +23,7 @@ function App() {
                 <div id="home">
                   <Home />
                 </div>
-                <div id="projects">
+                <div id="projects" className="relative scroll-mt-30 ">
                   <Projects />
                 </div>
               </>
