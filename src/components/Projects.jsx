@@ -13,9 +13,9 @@ const Projects = () => {
         'An innovative e-commerce platform offering a seamless shopping experience.',
     },
     {
-      title: 'Project 3',
+      title: 'Brighter - Social Networking Platform for the real-world',
       description:
-        'A social networking platform that connects like-minded individuals worldwide.',
+        'A social networking platform that connects like-minded individuals worldwide. This project enables people to connect in real-time and the project was built with React, Node.js, Express.js, MongoDB, as well as Redis for advanced caching.',
     },
     {
       title: 'Project 4',
@@ -25,41 +25,44 @@ const Projects = () => {
   ];
 
   return (
-    <div>
-      {/* Projects Section */}
+    <div className="flex flex-col min-h-screen z-10">
       <section
         id="projects"
-        className="relative mt-20 ml-5 mr-5 min-h-screen z-10 flex flex-col items-center scroll-mt-24"
+        className="relative flex-grow pb-10 mx-4 flex flex-col items-center"
       >
-        {/* Border Wrapper */}
-        <div className="relative backdrop-blur-sm opacity-85 bg-gray-950 rounded-3xl p-10 pb-20">
-          {/* Header */}
-          <div className="text-center mb-10">
-            <h2 className="text-5xl md:text-6xl text-opacity-100 font-bold mb-6 text-white">
-              Projects
-            </h2>
-            <p className="text-lg font-semibold md:text-xl text-opacity-100 max-w-4xl mx-auto text-gray-300 leading-relaxed">
-              Explore some of my most exciting projects showcasing innovative
-              solutions and creative designs.
-            </p>
-          </div>
+        {/* Glass morphism container with proper z-index */}
+        <div className="relative w-full z-10">
+          <div className="rounded-2xl p-10 pb-20 bg-zinc-400/10  backdrop-blur-md   border border-white dark:border-zinc-800">
+            {/* Header */}
+            <div className="text-center mb-10">
+              <h2 className="text-5xl md:text-6xl mt-12 font-bold mb-6 text-black dark:text-white">
+                Projects
+              </h2>
+              <p className="text-lg font-semibold md:text-xl max-w-4xl mx-auto text-gray-700 dark:text-white leading-relaxed">
+                Explore some of my most exciting projects showcasing innovative
+                solutions and creative designs.
+              </p>
+            </div>
 
-          {/* Project Boxes */}
-          <div className="grid grid-cols-1 mb-40 md:grid-cols-2 lg:grid-cols-2 gap-8">
-            {projects.map((project, index) => (
-              <div
-                key={index}
-                className="group relative border border-sky-600 p-8 bg-black text-white rounded-3xl shadow-xl hover:scale-105 hover:shadow-2xl transition-transform duration-300"
-                style={{ opacity: 1 }} // Ensure full opacity
-              >
-                <h3 className="text-3xl font-black mb-4 group-hover:text-purple-400 transition-colors duration-300">
-                  {project.title}
-                </h3>
-                <p className="font-semibold text-lg group-hover:text-gray-200 transition-colors duration-300">
-                  {project.description}
-                </p>
-              </div>
-            ))}
+            {/* Project Boxes */}
+            <div className="grid grid-cols-1 mb-80 md:grid-cols-2 lg:grid-cols-2 gap-10">
+              {projects.map((project, index) => (
+                <div
+                  key={index}
+                  className="group relative bg-white/80 dark:bg-zinc-400 backdrop-blur-sm shadow-2xl p-12 
+                           rounded-2xl hover:scale-105 hover:shadow-2xl transition-transform duration-300"
+                >
+                  <h3 className="text-3xl text-black font-bold mb-4 
+                              group-hover:text-purple-400 dark:group-hover:text-sky-800 transition-colors duration-300">
+                    {project.title}
+                  </h3>
+                  <p className="font-normal text-black text-xl 
+                             group-hover:text-gray-700 transition-colors duration-300">
+                    {project.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -68,4 +71,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

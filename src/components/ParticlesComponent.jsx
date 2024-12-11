@@ -1,11 +1,8 @@
 import Particles, { initParticlesEngine } from "@tsparticles/react";
 import { useEffect, useMemo, useState } from "react";
-// import { loadAll } from "@/tsparticles/all"; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-// import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
+import { loadSlim } from "@tsparticles/slim";
 
-const ParticlesComponent = (props) => {
+const ParticlesComponent = ({ id, theme }) => {
   const [init, setInit] = useState(false);
 
   // Initialize the tsParticles engine
@@ -26,7 +23,7 @@ const ParticlesComponent = (props) => {
     () => ({
       background: {
         color: {
-          value: "#000000", // Black background
+          value: theme === "dark" ? "#000000" : "#e2e8f", // Dynamically set background color based on theme
         },
       },
       fpsLimit: 120,
@@ -56,7 +53,7 @@ const ParticlesComponent = (props) => {
           value: "#5D3FD3", // Particle Color
         },
         links: {
-          color: "#0284c7", // Link Color
+          color: "#0284c7", // Link color adapts to theme
           distance: 150,
           enable: true,
           opacity: 1,
@@ -90,10 +87,10 @@ const ParticlesComponent = (props) => {
       },
       detectRetina: true,
     }),
-    []
+    [theme] // Recalculate options when theme changes
   );
 
-  return <Particles id={props.id} init={particlesLoaded} options={options} />;
+  return <Particles id={id} init={particlesLoaded} options={options} />;
 };
 
 export default ParticlesComponent;

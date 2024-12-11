@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Home = () => {
+  const [isVisible, setIsVisible] = useState(true);
+
+  useEffect(() => {
+    const homeSection = document.getElementById('home');
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVisible(entry.isIntersecting);
+      },
+      { threshold: 1.0 } // Fully visible when 100% of the section is in view
+    );
+
+    if (homeSection) {
+      observer.observe(homeSection);
+    }
+
+    return () => {
+      if (homeSection) {
+        observer.unobserve(homeSection);
+      }
+    };
+  }, []);
 
   return (
     <section
       id="home"
       className="relative flex items-center justify-center h-screen text-white overflow-hidden"
     >
-
       {/* Main Content */}
       <div className="relative z-10 text-center">
         <motion.div
@@ -28,7 +48,7 @@ const Home = () => {
           }}
         >
           <motion.h1
-            className="text-6xl md:text-8xl font-extrabold bg-clip-text text-white "
+            className="text-6xl md:text-8xl font-extrabold bg-clip-text text-black dark:text-white"
             variants={{
               hidden: { scale: 0.8, opacity: 0 },
               visible: { scale: 1, opacity: 0.85 },
@@ -42,7 +62,7 @@ const Home = () => {
             Joshua Thomas
           </motion.h1>
           <motion.p
-            className="text-2xl md:text-3xl mt-4 text-gray-300"
+            className="text-2xl md:text-3xl mt-4 text-black dark:text-white"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 0.85, y: 0 },
@@ -56,6 +76,14 @@ const Home = () => {
           </motion.p>
         </motion.div>
       </div>
+
+      {/* Footer Text */}
+      <p
+        className={`absolute bottom-8 right-10 text-md font-nm text-black dark:text-white transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'
+          }`}
+      >
+        Built with React.js, Vite, TailwindCSS, and Particles.js
+      </p>
     </section>
   );
 };

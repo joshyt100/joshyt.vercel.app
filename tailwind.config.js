@@ -3,10 +3,11 @@ module.exports = {
     "./src/**/*.{js,jsx,ts,tsx}", // Adjust the path based on your project structure
     './src/styles/**/*.scss',
   ],
+  darkMode: 'selector',
   theme: {
     extend: {
       spacing: {
-        '30': '7rem',
+        '30': '1rem',
       },
       keyframes: {
         gradient: {
