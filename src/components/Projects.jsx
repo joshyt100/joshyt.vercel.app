@@ -30,7 +30,6 @@ const Projects = () => {
         id="projects"
         className="relative flex-grow pb-10 mx-4 flex flex-col items-center"
       >
-        {/* Glass morphism container with proper z-index */}
         <div className="relative w-full z-10">
           <div className="rounded-2xl p-10 pb-20 bg-zinc-400/10  backdrop-blur-md   border border-white dark:border-zinc-800">
             {/* Header */}
@@ -49,15 +48,15 @@ const Projects = () => {
               {projects.map((project, index) => (
                 <div
                   key={index}
-                  className="group relative bg-white/80 dark:bg-zinc-400 backdrop-blur-sm shadow-2xl p-12 
-                           rounded-2xl hover:scale-105 hover:shadow-2xl transition-transform duration-300"
+                  className="group relative bg-white/80 dark:bg-zinc-900 backdrop-blur-sm shadow-2xl p-12 
+                           rounded-2xl hover:scale-105 hover:shadow-2xl transition-transform duration-300 border border-zinc-500"
                 >
                   <h3 className="text-3xl text-black font-bold mb-4 
-                              group-hover:text-purple-400 dark:group-hover:text-sky-800 transition-colors duration-300">
+                              group-hover:text-purple-400 dark:group-hover:text-purple-800 dark:text-gray-200 transition-colors duration-300">
                     {project.title}
                   </h3>
                   <p className="font-normal text-black text-xl 
-                             group-hover:text-gray-700 transition-colors duration-300">
+                             group-hover:text-gray-700 dark:text-gray-200 dark:group-hover:text-gray-400 transition-colors duration-300">
                     {project.description}
                   </p>
                 </div>

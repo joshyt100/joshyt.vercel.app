@@ -79,7 +79,7 @@ const Home = () => {
 
       {/* Footer Text */}
       <p
-        className={`absolute bottom-8 right-10 text-md font-nm text-black dark:text-white transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'
+        className={`absolute bottom-8 right-10 sm:text-md md:text-md lg:text-md 2xl:text-lg font-nm text-black dark:text-white transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'
           }`}
       >
         Built with React.js, Vite, TailwindCSS, and Particles.js

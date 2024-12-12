@@ -1,6 +1,0 @@
-section {
-  min-height: 100vh;
-  /* Each section takes full viewport height */
-  padding-top: 80px;
-  /* Account for fixed Navbar */
-}

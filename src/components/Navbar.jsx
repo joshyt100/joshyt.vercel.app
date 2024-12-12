@@ -82,7 +82,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               href="https://github.com/joshyt100"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-700 dark:hover:text-gray-300  transition opacity-80"
+              className="hover:text-gray-700 dark:hover:text-gray-300 text-black dark:text-white transition opacity-80"
               aria-label="GitHub"
             >
               <FaGithub className="h-7 w-7" />
