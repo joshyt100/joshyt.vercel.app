@@ -1,9 +1,9 @@
-module.exports = {
+export default {
   content: [
     "./src/**/*.{js,jsx,ts,tsx}", // Adjust the path based on your project structure
     './src/styles/**/*.scss',
   ],
-  darkMode: 'selector',
+  darkMode: 'class', // Use 'class' instead of 'selector' if that's your intention
   theme: {
     extend: {
       spacing: {
