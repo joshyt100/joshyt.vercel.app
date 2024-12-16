@@ -1,0 +1,34 @@
+import ProjectLayout from '../components/ProjectLayout';
+import CodeBlock from '../components/CodeBlock';
+
+<ProjectLayout
+  title="Member Management Dashboard"
+  description="A powerful tool for managing team members and projects."
+  techStack={["React", "FastAPI", "Firebase", "JavaScript", "CSS-in-JS"]}
+  features={[
+    "Add, update, and delete members",
+    "Real-time database synchronization",
+    "Advanced querying and filtering options",
+  ]}
+>
+  ## Overview
+
+  The Member Management Dashboard is designed to streamline the process of managing team members and their associated projects.
+
+  ## Example Code
+
+  <CodeBlock
+    language="javascript"
+    code={`
+      const fetchMembers = async () => {
+        const response = await fetch('/api/members');
+        const data = await response.json();
+        console.log(data);
+      };
+
+      fetchMembers();
+    `}
+  />
+
+</ProjectLayout>
+

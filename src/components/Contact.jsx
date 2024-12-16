@@ -46,6 +46,7 @@ const Contact = () => {
     <section
       id="contact"
       className="min-h-screen bg-zinc-200 dark:bg-gradient-to-tr from-zinc-900 to-black text-white flex flex-col items-center justify-center p-8"
+
     >
       {/* Back Arrow */}
       <div className="absolute top-20 left-10">
@@ -65,7 +66,7 @@ const Contact = () => {
       <form
         ref={formRef}
         onSubmit={sendEmail}
-        className="w-full max-w-2xl bg-white opacity-70 dark:bg-zinc-800 backdrop-blur-lg z-20 p-6 rounded-lg shadow-lg space-y-4"
+        className="w-full max-w-2xl bg-white opacity-70 dark:bg-zinc-800 backdrop-blur-lg z-20 p-6 rounded-lg shadow-2xl space-y-4 border border-gray-300 dark:border-zinc-800"
       >
         <div className="grid grid-cols-1 gap-4">
           <div>

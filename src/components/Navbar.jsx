@@ -67,7 +67,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                   onChange={toggleTheme}
                   className="sr-only peer"
                 />
-                <div className="w-14 h-7 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-gray-500 rounded-full peer dark:bg-gray-600 dark:peer-checked:bg-yellow-500 transition-all duration-300">
+                <div className="w-14 h-7 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-gray-500 rounded-full peer dark:bg-gray-600 dark:peer-checked:bg-yellow-600 transition-all duration-300">
                   <div
                     className={`absolute w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 ${theme === 'dark' ? 'translate-x-7' : ''
                       }`}
@@ -111,7 +111,7 @@ const Navbar = ({ theme, toggleTheme }) => {
 
         {/* Dropdown Menu (Mobile Only) */}
         {menuOpen && (
-          <div className="absolute top-full left-0 w-full bg-gray-200 opacity-80 dark:bg-black text-black dark:text-white flex flex-col items-center space-y-4 py-4 shadow-lg">
+          <div className="absolute top-full left-0 w-full bg-gray-200 opacity-90 dark:bg-black text-black dark:text-white flex flex-col items-center space-y-4 py-4 shadow-lg">
             <button
               onClick={() => scrollToSection('home')}
               className="hover:text-gray-700 dark:hover:text-gray-300 transition"

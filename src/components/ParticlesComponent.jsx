@@ -23,7 +23,7 @@ const ParticlesComponent = ({ id, theme }) => {
     () => ({
       background: {
         color: {
-          value: theme === "dark" ? "#000000" : "#e2e8f", // Dynamically set background color based on theme
+          value: theme === "dark" ? "#000000" : "#ECECEE", // Dynamically set background color based on theme
         },
       },
       fpsLimit: 120,
@@ -50,10 +50,10 @@ const ParticlesComponent = ({ id, theme }) => {
       },
       particles: {
         color: {
-          value: "#5D3FD3", // Particle Color
+          value: theme === "dark" ? "#5D3FD3" : "#5D3FD3", // Particle Color
         },
         links: {
-          color: "#0284c7", // Link color adapts to theme
+          color: theme === "dark" ? "#FFFFFF" : "#0284c7", // Lin 0284c7 ewcolor adapts to theme
           distance: 150,
           enable: true,
           opacity: 1,

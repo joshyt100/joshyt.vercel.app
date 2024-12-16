@@ -48,7 +48,7 @@ const Home = () => {
           }}
         >
           <motion.h1
-            className="text-6xl md:text-8xl font-extrabold bg-clip-text text-black dark:text-white"
+            className="text-6xl md:text-8xl 2xl:text-8xl font-black bg-clip-text text-black dark:text-white"
             variants={{
               hidden: { scale: 0.8, opacity: 0 },
               visible: { scale: 1, opacity: 0.85 },
@@ -62,7 +62,7 @@ const Home = () => {
             Joshua Thomas
           </motion.h1>
           <motion.p
-            className="text-2xl md:text-3xl mt-4 text-black dark:text-white"
+            className="text-2xl md:text-3xl 2xl:text-4xl mt-4 text-black dark:text-white"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 0.85, y: 0 },
