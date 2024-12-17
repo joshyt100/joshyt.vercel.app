@@ -6,23 +6,37 @@ const Home = () => {
 
   useEffect(() => {
     const homeSection = document.getElementById('home');
+    const footerText = document.querySelector('.footer-text');
+
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVisible(entry.isIntersecting);
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target === homeSection) {
+            setIsVisible(entry.isIntersecting);
+          }
+        });
       },
-      { threshold: 1.0 } // Fully visible when 100% of the section is in view
+      {
+        threshold: 0.7,
+        //rootMargin: '-50px 0px'
+        rootMargin: '-100px 0px' //Add some margin to trigger earlier
+      }
     );
+
+    setIsVisible(true);
 
     if (homeSection) {
       observer.observe(homeSection);
     }
 
+    // Cleanup function
     return () => {
       if (homeSection) {
         observer.unobserve(homeSection);
       }
+      observer.disconnect();
     };
-  }, []);
+  }, []); // Empty dependency array to run only on mount
 
   return (
     <section
@@ -76,17 +90,19 @@ const Home = () => {
           </motion.p>
         </motion.div>
       </div>
-
       {/* Footer Text */}
-      <p
-        className={`absolute bottom-8 right-10 sm:text-md md:text-md lg:text-md 2xl:text-lg font-nm text-black dark:text-white transition-opacity duration-500 ${isVisible ? 'opacity-100' : 'opacity-0'
+      <div
+        className={`absolute bottom-8 right-10 transition-all duration-500 ${isVisible
+          ? 'opacity-100 transform translate-y-0'
+          : 'opacity-0 transform translate-y-4'
           }`}
       >
-        Built with React.js, Vite, TailwindCSS, and Particles.js
-      </p>
+        <p className="sm:text-md md:text-md lg:text-md 2xl:text-lg font-nm text-black dark:text-white">
+          Built with React.js, Vite, TailwindCSS, and Particles.js
+        </p>
+      </div>
     </section>
   );
 };
 
 export default Home;
-

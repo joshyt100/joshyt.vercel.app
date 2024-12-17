@@ -51,22 +51,23 @@ const Projects = () => {
             {/* Project Boxes */}
             <div className="grid grid-cols-1 mb-80 md:grid-cols-2 xl:grid-cols-3 gap-10 lg:mx-15">
               {projects.map((project, index) => (
-                <div
+                <Link
+                  to={project.link}
                   key={index}
                   className="group relative bg-zinc-100/85 dark:bg-gradient-to-tr from-zinc-900 to-black shadow-2xl p-12 
-                           rounded-2xl hover:scale-105 hover:shadow-2xl transition-transform duration-300 border border-zinc-600"
+                            rounded-2xl hover:scale-105 hover:shadow-2xl transition-transform duration-300 border border-zinc-600"
                 >
-                  <Link to={project.link}>
+                  <div>
                     <h3 className="text-4xl text-black font-bold mb-4 
                                 group-hover:text-purple-400 dark:group-hover:text-purple-400 dark:text-white transition-colors duration-300">
                       {project.title}
                     </h3>
-                  </Link>
-                  <p className="font-normal text-zinc-800 text-xl text-pretty 
+                    <p className="font-normal text-zinc-800 text-xl text-pretty 
                                group-hover:text-gray-700 dark:text-zinc-300 dark:group-hover:text-gray-400 transition-colors duration-300 mb-3">
-                    {project.description}
-                  </p>
-                </div>
+                      {project.description}
+                    </p>
+                  </div>
+                </Link>
               ))}
             </div>
           </div>

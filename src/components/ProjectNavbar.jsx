@@ -5,6 +5,7 @@ import { FaArrowLeft, FaGithub, FaLinkedin } from 'react-icons/fa';
 const ProjectNavbar = () => {
   const navigate = useNavigate();
 
+  // SetTimeOut is being used here to ensure that background render is done before re-routing *important*
   const handleBackClick = () => {
     navigate('/');
     setTimeout(() => {
@@ -12,7 +13,7 @@ const ProjectNavbar = () => {
       if (projectsSection) {
         projectsSection.scrollIntoView({ behavior: 'instant' });
       }
-    }, 0);
+    }, 10);
   };
 
   return (

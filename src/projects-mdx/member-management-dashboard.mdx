@@ -1,34 +1,116 @@
 import ProjectLayout from '../components/ProjectLayout';
 import CodeBlock from '../components/CodeBlock';
+import { FaReact } from "react-icons/fa";
 
 <ProjectLayout
   title="Member Management Dashboard"
-  description="A powerful tool for managing team members and projects."
-  techStack={["React", "FastAPI", "Firebase", "JavaScript", "CSS-in-JS"]}
+  description="A full-stack tool for managing team members and projects with real-time updates and a clean, responsive UI."
+  githubLink="https://github.com/joshyt100/Full-Stack-Member-Management-System"
+  techStack={["React", "FastAPI", "Firebase", "JavaScript"]}
   features={[
-    "Add, update, and delete members",
-    "Real-time database synchronization",
-    "Advanced querying and filtering options",
+    "Add, update, and delete team members and projects",
+    "Dynamic associations between members and projects",
+    "Real-time updates with Firebase Firestore",
+    "Search and filter members and projects",
+    "Clean and responsive user interface",
   ]}
 >
   ## Overview
 
-  The Member Management Dashboard is designed to streamline the process of managing team members and their associated projects.
+  The **Member Management Dashboard** is a full-stack application designed to streamline team and project management. It combines a **React frontend**, a **FastAPI backend**, and **Firebase Firestore** for real-time data storage and synchronization.
 
-  ## Example Code
+  ## Backend: Powered by FastAPI ⚙️
+
+  The backend uses **FastAPI** to expose RESTful APIs that manage data efficiently. It integrates with **Firebase Firestore** for real-time updates.
+
+  **Key Endpoints**:
+  - `GET /members` → Fetch all team members.
+  - `POST /members` → Add a new member.
+  - `PUT /members/{id}` → Update member details.
+  - `DELETE /members/{id}` → Delete a member by ID.
+
+  Example for fetching members:
+
+  <CodeBlock
+    language="python"
+    code={`
+    @router.get("/members")
+    def get_members():
+        docs = db.collection("members").stream()
+        return [doc.to_dict() | {"id": doc.id} for doc in docs]
+    `}
+  />
+
+  ## Frontend: React & Responsive UI ✨
+
+  The frontend is built with **React** and styled using **Styled Components**. Key features include:
+  - **Dynamic Modals**: Add and update members or projects seamlessly.
+  - **Real-Time Updates**: Changes are reflected instantly across the app.
+  - **Search and Filter**: Quickly search members or projects by name.
+
+  Example of fetching and displaying members:
 
   <CodeBlock
     language="javascript"
     code={`
-      const fetchMembers = async () => {
-        const response = await fetch('/api/members');
-        const data = await response.json();
-        console.log(data);
-      };
+    const fetchMembers = async () => {
+      const response = await fetch('/api/members');
+      const data = await response.json();
+      console.log(data);
+    };
 
-      fetchMembers();
+    fetchMembers();
     `}
   />
+
+  ## Features
+  - **Team Member Management**: Add, update, and delete team members.
+  - **Project Management**: Associate members with projects dynamically.
+  - **Real-Time Sync**: Changes instantly reflect in the UI with Firebase Firestore.
+  - **Responsive Design**: Works seamlessly on all devices.
+
+  ## How to Run Locally 🚀
+
+  Follow these steps to run the project on your machine:
+
+  1. **Clone the Repository**:
+     ```bash
+     git clone https://github.com/joshyt100/Full-Stack-Member-Management-System.git
+     cd Full-Stack-Member-Management-System
+     ```
+
+  2. **Set Up the Backend**:
+     - Install dependencies:
+       ```bash
+       cd backend
+       pip install -r requirements.txt
+       ```
+     - Add Firebase credentials to your environment:
+       ```bash
+       export FIREBASE_CREDENTIALS="path/to/firebase-credentials.json"
+       ```
+     - Start the FastAPI server:
+       ```bash
+       uvicorn main:app --reload
+       ```
+
+  3. **Set Up the Frontend**:
+     - Install dependencies:
+       ```bash
+       cd frontend
+       npm install
+       ```
+     - Start the React development server:
+       ```bash
+       npm start
+       ```
+
+  4. **Access the Application**:
+     Open [http://localhost:3000](http://localhost:3000) to view the frontend, and the API runs on [http://localhost:8000](http://localhost:8000).
+
+  ## Conclusion
+
+  The **Member Management Dashboard** highlights the strength of modern full-stack development. With **React**, **FastAPI**, and **Firebase**, it delivers a real-time, responsive, and easy-to-use solution for team and project management.
 
 </ProjectLayout>
 
