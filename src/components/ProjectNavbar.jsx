@@ -13,7 +13,7 @@ const ProjectNavbar = () => {
       if (projectsSection) {
         projectsSection.scrollIntoView({ behavior: 'instant' });
       }
-    }, 15);
+    }, 5);
   };
 
   return (
@@ -23,7 +23,7 @@ const ProjectNavbar = () => {
           {/* Back Arrow */}
           <button
             onClick={handleBackClick}
-            className="text-xl flex items-center space-x-2 hover:text-gray-700 dark:hover:text-gray-300 transition-opacity"
+            className="text-xl flex  items-center space-x-2 hover:text-gray-700 dark:hover:text-gray-300 transition-opacity"
             aria-label="Go Back"
           >
             <FaArrowLeft />
