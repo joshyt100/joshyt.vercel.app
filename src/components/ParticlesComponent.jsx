@@ -1,96 +1,87 @@
+import React, { useEffect, useMemo, useState } from "react";
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { useEffect, useMemo, useState } from "react";
 import { loadSlim } from "@tsparticles/slim";
+import { debounce } from "lodash";
+
+const themeColors = {
+  dark: {
+    background: "#000000",
+    particleColor: "#5D3FD3",
+    linkColor: "#FFFFFF",
+  },
+  light: {
+    background: "#ECECEE",
+    particleColor: "#5D3FD3",
+    linkColor: "#0284c7",
+  },
+};
 
 const ParticlesComponent = ({ id, theme }) => {
   const [init, setInit] = useState(false);
 
-  // Initialize the tsParticles engine
   useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      // Load the required engine features
-      await loadSlim(engine); // Using the slim version for smaller bundle size
-    }).then(() => {
+    const initializeParticles = async () => {
+      await initParticlesEngine(async (engine) => {
+        await loadSlim(engine);
+      });
       setInit(true);
-    });
+    };
+
+    initializeParticles();
   }, []);
 
-  const particlesLoaded = (container) => {
+  const particlesLoaded = debounce((container) => {
     console.log(container);
-  };
+  }, 300);
 
-  const options = useMemo(
-    () => ({
+  const options = useMemo(() => {
+    const colors = themeColors[theme];
+    const isMobile = window.innerWidth < 768;
+
+    return {
       background: {
-        color: {
-          value: theme === "dark" ? "#000000" : "#ECECEE", // Dynamically set background color based on theme
-        },
+        color: { value: colors.background },
       },
       fpsLimit: 120,
       interactivity: {
         events: {
-          onClick: {
-            enable: false,
-            mode: "repulse",
-          },
           onHover: {
             enable: true,
             mode: "grab",
           },
         },
         modes: {
-          push: {
-            distance: 150,
-            duration: 15,
-          },
-          grab: {
-            distance: 150,
-          },
+          grab: { distance: 150 },
         },
       },
       particles: {
-        color: {
-          value: theme === "dark" ? "#5D3FD3" : "#5D3FD3", // Particle Color
-        },
+        color: { value: colors.particleColor },
         links: {
-          color: theme === "dark" ? "#FFFFFF" : "#0284c7", // Lin 0284c7 ewcolor adapts to theme
+          color: colors.linkColor,
           distance: 150,
           enable: true,
           opacity: 1,
           width: 1,
         },
         move: {
-          direction: "none",
           enable: true,
-          outModes: {
-            default: "bounce",
-          },
+          outModes: { default: "bounce" },
           random: true,
           speed: 0.75,
-          straight: false,
         },
         number: {
-          density: {
-            enable: true,
-          },
-          value: 275,
+          density: { enable: true },
+          value: isMobile ? 100 : 275,
         },
-        opacity: {
-          value: 1.0,
-        },
-        shape: {
-          type: "circle",
-        },
-        size: {
-          value: { min: 2, max: 3 },
-        },
+        opacity: { value: 1.0 },
+        shape: { type: "circle" },
+        size: { value: { min: 2, max: 3 } },
       },
       detectRetina: true,
-    }),
-    [theme] // Recalculate options when theme changes
-  );
+    };
+  }, [theme]);
 
-  return <Particles id={id} init={particlesLoaded} options={options} />;
+  return init ? <Particles id={id} init={particlesLoaded} options={options} /> : null;
 };
 
 export default ParticlesComponent;

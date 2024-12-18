@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ProjectNavbar from './components/ProjectNavbar';
 import Home from './components/Home';
@@ -13,11 +13,9 @@ import MemberManagementDashboard from './projects-mdx/member-management-dashboar
 import DotFiles from './projects-mdx/dot_files.mdx';
 import CanadianExperience from './projects-mdx/canadian-experience.mdx';
 import PurchaseOrderSystem from './projects-mdx/purchase-order-system.mdx';
-
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const location = useLocation();
-
 
   useEffect(() => {
     const root = document.documentElement;
@@ -30,7 +28,15 @@ function App() {
       window.history.scrollRestoration = 'manual';
     }
     if (location.pathname === '/') {
-      window.scrollTo(0, 0); // Scroll to the top for the home page
+      const hash = location.hash || '';
+      if (hash === '#projects') {
+        const projectsSection = document.getElementById('projects');
+        if (projectsSection) {
+          window.scrollTo(0, projectsSection.offsetTop); // Instantly jump to projects
+        }
+      } else {
+        window.scrollTo(0, 0); // Scroll to top for the home page
+      }
     }
   }, [location]);
 
@@ -50,7 +56,6 @@ function App() {
         <Navbar theme={theme} toggleTheme={toggleTheme} />
       )}
 
-      {/* Routes */}
       <Routes>
         <Route
           path="/"
@@ -70,7 +75,7 @@ function App() {
         />
         <Route path="/projects/member-management-dashboard" element={<MemberManagementDashboard />} />
         <Route path="/projects/sidequest" element={<SideQuest />} />
-        <Route path="/projects/snake-game" element={< VimMotionSnake />} />
+        <Route path="/projects/snake-game" element={<VimMotionSnake />} />
         <Route path="/projects/dot-files" element={<DotFiles />} />
         <Route path="/projects/canadian-experience" element={<CanadianExperience />} />
         <Route path="/projects/purchase-order-system" element={<PurchaseOrderSystem />} />
@@ -79,6 +84,9 @@ function App() {
     </div>
   );
 }
+
+
+
 
 export default function AppWithRouter() {
   return (
