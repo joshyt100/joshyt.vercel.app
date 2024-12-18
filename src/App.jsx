@@ -35,7 +35,7 @@ function App() {
           window.scrollTo(0, projectsSection.offsetTop); // Instantly jump to projects
         }
       } else {
-        window.scrollTo(0, 0); // Scroll to top for the home page
+        window.scrollTo(0, 0);
       }
     }
   }, [location]);
