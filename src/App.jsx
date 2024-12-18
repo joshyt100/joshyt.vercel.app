@@ -7,14 +7,17 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import ParticlesComponent from './components/ParticlesComponent';
 
-import ECommercePlatform from './projects-mdx/e-commerce-platform.mdx';
-import SocialNetworkingPlatform from './projects-mdx/social-networking-platform.mdx';
-import MachineLearningProject from './projects-mdx/machine-learning-project.mdx';
+import SideQuest from './projects-mdx/sidequest.mdx';
+import VimMotionSnake from './projects-mdx/vim-motion-snake.mdx';
 import MemberManagementDashboard from './projects-mdx/member-management-dashboard.mdx';
+import DotFiles from './projects-mdx/dot_files.mdx';
+import CanadianExperience from './projects-mdx/canadian-experience.mdx';
+import PurchaseOrderSystem from './projects-mdx/purchase-order-system.mdx';
 
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
   const location = useLocation();
+
 
   useEffect(() => {
     const root = document.documentElement;
@@ -66,9 +69,11 @@ function App() {
           }
         />
         <Route path="/projects/member-management-dashboard" element={<MemberManagementDashboard />} />
-        <Route path="/projects/e-commerce-platform" element={<ECommercePlatform />} />
-        <Route path="/projects/social-networking-platform" element={<SocialNetworkingPlatform />} />
-        <Route path="/projects/machine-learning-project" element={<MachineLearningProject />} />
+        <Route path="/projects/sidequest" element={<SideQuest />} />
+        <Route path="/projects/snake-game" element={< VimMotionSnake />} />
+        <Route path="/projects/dot-files" element={<DotFiles />} />
+        <Route path="/projects/canadian-experience" element={<CanadianExperience />} />
+        <Route path="/projects/purchase-order-system" element={<PurchaseOrderSystem />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>
     </div>

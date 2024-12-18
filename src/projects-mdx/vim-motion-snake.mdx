@@ -1,0 +1,111 @@
+import ProjectLayout from '../components/ProjectLayout';
+import CodeBlock from '../components/CodeBlock';
+
+<ProjectLayout
+  title="Vim Motion Snake Game"
+  description="A fun and interactive twist on the classic Snake game, featuring Vim-style motion controls (h, j, k, l) to navigate the snake."
+  githubLink="https://github.com/joshyt100/vim-motion-snake-game"
+  techStack={["Python", "Tkinter"]}
+  features={[
+    "Classic Snake game with a Vim-style motion control scheme",
+    "Real-time score tracking and dynamic gameplay speed",
+    "Interactive UI with game-over and replay functionality",
+    "Responsive 400x400 grid for smooth gameplay",
+    "Food placement logic avoiding collisions with the snake",
+  ]}
+>
+  ## Overview  
+
+  The **Vim Motion Snake Game** is a creative adaptation of the classic Snake game that replaces traditional controls with Vim-style motions (`h`, `j`, `k`, `l`) for navigation. This game is perfect for Vim enthusiasts looking to sharpen their muscle memory while having fun!
+
+  ## Key Features ✨  
+
+  - **Vim Motion Controls**: Navigate the snake using Vim's navigation keys:  
+     - `h`: Move Left  
+     - `j`: Move Down  
+     - `k`: Move Up  
+     - `l`: Move Right  
+  - **Dynamic Gameplay**: The snake's speed increases as the score rises.  
+  - **Interactive UI**: Displays the current score and a clean game-over screen with a replay option (`r`).  
+  - **Smooth Grid Mechanics**: A responsive 400x400 grid ensures seamless gameplay.  
+  - **Collision Detection**: Handles collisions with walls and the snake's own body.  
+
+  ## Code Highlights 🧩  
+
+  ### 1. Motion Controls  
+
+  The Vim-like navigation controls are bound using the `bind` method in Tkinter:  
+
+  <CodeBlock
+    language="python"
+    code={`
+    def bind_keys(self):
+        self.master.bind("k", lambda event: self.change_direction("Up"))
+        self.master.bind("j", lambda event: self.change_direction("Down"))
+        self.master.bind("h", lambda event: self.change_direction("Left"))
+        self.master.bind("l", lambda event: self.change_direction("Right"))
+    `}
+  />  
+
+  ### 2. Drawing the Snake and Food  
+
+  The snake and food are drawn dynamically on the canvas. The snake is a series of rectangles, and the food is represented as an oval:  
+
+  <CodeBlock
+    language="python"
+    code={`
+    def draw(self):
+        self.canvas.delete("all")
+        self.canvas.create_text(45, 10, text=f"Score: {self.score}", fill="white")
+
+        for segment in self.snake:
+            self.canvas.create_rectangle(
+                segment[0], segment[1], segment[0] + 20, segment[1] + 20, fill="green"
+            )
+
+        self.canvas.create_oval(
+            self.food[0], self.food[1], self.food[0] + 20, self.food[1] + 20, fill="red"
+        )
+    `}
+  />  
+
+  ## How to Play 🎮  
+
+  1. **Start the Game**: Run the game, and the snake will begin moving automatically.  
+  2. **Control the Snake**: Use Vim-style controls:  
+     - `h` → Move Left  
+     - `j` → Move Down  
+     - `k` → Move Up  
+     - `l` → Move Right  
+  3. **Eat the Food**: Guide the snake to the red food to grow and increase your score.  
+  4. **Avoid Collisions**: Do not run into the walls or your own body!  
+  5. **Replay**: After a game over, press `r` to restart the game.  
+
+  ## Next Steps 🚀  
+
+  - **Improved Visuals**: Add modern graphics and animations for an enhanced look.  
+  - **Leaderboards**: Track and display high scores.  
+  - **Additional Levels**: Introduce levels with obstacles for added difficulty.  
+  - **Customization**: Allow players to customize the grid size and speed.  
+
+  ## How to Run Locally 🖥️  
+
+  Follow these steps to play the Vim Motion Snake Game on your machine:  
+
+  1. **Clone the Repository**:  
+     ```bash
+     git clone https://github.com/joshyt100/vim-motion-snake-game.git
+     cd vim-motion-snake-game
+     ```  
+
+  2. **Run the Game**:  
+     Ensure Python is installed, then execute:  
+     ```bash
+     python3 snake_game.py
+     ```  
+
+  3. **Enjoy the Game**:  
+     Use Vim keys to navigate the snake and have fun!  
+
+</ProjectLayout>
+

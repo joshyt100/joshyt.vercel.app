@@ -4,29 +4,44 @@ import { Link } from 'react-router-dom';
 const Projects = () => {
   const projects = [
     {
-      title: 'Member and Project Management Dashboard',
+      title: 'Member and Project Management System',
       description:
-        'This is a project built with React, FastAPI, Javascript, and Firebase that allows the user to manage their members and associated projects. It can read, update, delete, and display information about each of the members and projects.',
+        'Full-stack project that allows teams to efficiently manage their members and projects. It can read, update, delete, and display information about each of the members and projects.',
       link: '/projects/member-management-dashboard',
     },
     {
-      title: 'E-Commerce Platform',
+      title: 'SideQuest',
       description:
-        'An innovative e-commerce platform offering a seamless shopping experience.',
-      link: '/projects/e-commerce-platform',
+        'A location-based mobile app that curates personalized quests, guiding users to unique experiences nearby. By connecting people to similar destinations, SideQuest fosters shared adventures and memorable discoveries. (Ongoing Development)',
+      link: '/projects/sidequest',
     },
     {
-      title: 'Brighter - Social Networking Platform',
-      description:
-        'A social networking platform that connects like-minded individuals worldwide. This project enables people to connect in real-time and the project was built with React, Node.js, Express.js, MongoDB, as well as Redis for advanced caching.',
-      link: '/projects/social-networking-platform',
+      title: 'Vim Motion Snake Game',
+      description: "A modern take on the classic Snake game, featuring Vim-style motion controls (h, j, k, l) for navigation. Designed to enhance your Vim muscle memory while providing a fun and interactive gaming experience.",
+      link: '/projects/snake-game',
     },
     {
-      title: 'Machine Learning Project',
+      title: 'Canadian Experience',
       description:
-        'A machine learning project focused on analyzing and predicting real-world trends.',
-      link: '/projects/machine-learning-project',
+        'An interactive animation project featuring Harold, Sparty, and two custom-built machines. Use the characters and machines together to create fully customizable animations, control machine timing, and bring your scenes to life with precision and creativity.',
+      link: '/projects/canadian-experience',
+
     },
+
+    {
+      title: 'Dotfiles',
+      description:
+        'A collection of custom configurations designed to optimize the development workflow, featuring tools like Neovim, Alacritty, Starship, and AeroSpace.',
+      link: '/projects/dot-files',
+    },
+    {
+      title: 'Multi-Threaded Purchase Order System',
+      description: 'A C++ application simulating inventory and order management with multi-threading. This project demonstrates the use of POSIX threads for efficient and concurrent processing of customer orders and inventory updates.',
+      link: '/projects/purchase-order-system',
+    },
+
+
+
   ];
 
   return (

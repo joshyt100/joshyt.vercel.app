@@ -3,7 +3,7 @@ import CodeBlock from '../components/CodeBlock';
 import { FaReact } from "react-icons/fa";
 
 <ProjectLayout
-  title="Member Management Dashboard"
+  title="Member and Project Management System"
   description="A full-stack tool for managing team members and projects with real-time updates and a clean, responsive UI."
   githubLink="https://github.com/joshyt100/Full-Stack-Member-Management-System"
   techStack={["React", "FastAPI", "Firebase", "JavaScript"]}
@@ -27,7 +27,11 @@ import { FaReact } from "react-icons/fa";
   - `GET /members` → Fetch all team members.
   - `POST /members` → Add a new member.
   - `PUT /members/{id}` → Update member details.
-  - `DELETE /members/{id}` → Delete a member by ID.
+  - `DELETE /members/{id}` → Delete a project by ID.
+  - `GET /projects` → Fetch all team members.
+  - `POST /projects` → Add a new member.
+  - `PUT /projects/{id}` → Update project details.
+  - `DELETE /projects/{id}` → Delete a project by ID.
 
   Example for fetching members:
 
@@ -35,7 +39,7 @@ import { FaReact } from "react-icons/fa";
     language="python"
     code={`
     @router.get("/members")
-    def get_members():
+def get_members():
         docs = db.collection("members").stream()
         return [doc.to_dict() | {"id": doc.id} for doc in docs]
     `}
@@ -50,30 +54,29 @@ import { FaReact } from "react-icons/fa";
 
   Example of fetching and displaying members:
 
-  <CodeBlock
-    language="javascript"
-    code={`
-    const fetchMembers = async () => {
-      const response = await fetch('/api/members');
-      const data = await response.json();
-      console.log(data);
+<CodeBlock
+  language="javascript"
+  code={`
+    const fetchMembers = () => {
+      axios
+        .get(\`\${apiUrl}/members\`) 
+        .then((response) => {
+          setMembers(response.data);
+        })
+        .catch((error) => {
+          console.error("Error fetching members:", error);
+        });
     };
+  `}
+/>
 
-    fetchMembers();
-    `}
-  />
-
-  ## Features
-  - **Team Member Management**: Add, update, and delete team members.
-  - **Project Management**: Associate members with projects dynamically.
-  - **Real-Time Sync**: Changes instantly reflect in the UI with Firebase Firestore.
-  - **Responsive Design**: Works seamlessly on all devices.
 
   ## How to Run Locally 🚀
 
   Follow these steps to run the project on your machine:
 
   1. **Clone the Repository**:
+
      ```bash
      git clone https://github.com/joshyt100/Full-Stack-Member-Management-System.git
      cd Full-Stack-Member-Management-System
@@ -108,9 +111,6 @@ import { FaReact } from "react-icons/fa";
   4. **Access the Application**:
      Open [http://localhost:3000](http://localhost:3000) to view the frontend, and the API runs on [http://localhost:8000](http://localhost:8000).
 
-  ## Conclusion
-
-  The **Member Management Dashboard** highlights the strength of modern full-stack development. With **React**, **FastAPI**, and **Firebase**, it delivers a real-time, responsive, and easy-to-use solution for team and project management.
 
 </ProjectLayout>
 

@@ -1,0 +1,94 @@
+
+import ProjectLayout from '../components/ProjectLayout';
+import CodeBlock from '../components/CodeBlock';
+
+
+
+<ProjectLayout
+  title="Multi-Threaded Purchase Order System"
+  description="A simulation of a multi-threaded system for managing inventory and processing purchase orders."
+  techStack={["C++", "POSIX Threads"]}
+  features={[
+    "Simultaneous execution of producer and consumer threads",
+    "Bounded buffer implementation for order management",
+    "Real-time inventory updates",
+    "Detailed transaction logging",
+  ]}
+  githubLink="https://github.com/joshyt100/Multi-threaded-Purchase-Order-System"
+>
+
+The **Multi-Threaded Purchase Order System** is a C++ application simulating inventory and order management for a wholesale tree company. It demonstrates the use of concurrent programming techniques to efficiently handle multiple producer threads and a single consumer thread.
+
+### Key Components
+
+1. **Inventory Management**
+   - Reads the starting inventory from `inventory.old`.
+   - Writes the updated inventory to `inventory.new`.
+
+2. **Order Processing**
+   - Producer threads read orders from files and place them into a bounded buffer.
+   - The consumer thread processes these orders, updating the inventory or rejecting them if invalid.
+
+3. **Bounded Buffer**
+   - A circular buffer synchronizes the producers and the consumer efficiently.
+
+4. **Transaction Log**
+   - Outputs the results of order processing to a `log` file with formatted entries.
+
+### Example Code: Producer and Consumer Threads
+
+<CodeBlock
+language="cpp"
+    code={`
+    void* producer(void* arg) {
+    std::string filename = "orders" + std::to_string(*(int*)arg);
+    std::ifstream orderFile(filename);
+
+    Order order;
+    while (orderFile >> order.customerId >> order.productId >> order.quantity) {
+        boundedBuffer->insert(order);
+    }
+
+    // End-of-data signal
+    Order endOrder;
+    endOrder.isEndOfData = true;
+    boundedBuffer->insert(endOrder);
+}
+
+void* consumer(void* arg) {
+    while (true) {
+        Order order = boundedBuffer->remove();
+        if (order.isEndOfData) break;
+        // Process order logic here
+    }
+}
+    `}
+
+/>
+
+### Instructions to Run Locally
+
+1. **Install a C++ Compiler**
+   - Ensure `g++` is installed on your system. For Linux, you can install it with:
+     ```bash
+     sudo apt-get install g++
+     ```
+
+2. **Compile the Program**
+   - Use the following command to compile the code:
+     ```bash
+     g++ -std=c++11 -pthread proj05.cpp -o proj05
+     ```
+
+3. **Prepare Input Files**
+   - Create an `inventory.old` file with the initial inventory.
+   - Create `ordersN` files (`orders1`, `orders2`, etc.) with customer orders.
+
+4. **Run the Program**
+   - Execute the program with optional arguments for the number of producers (`-p`) and buffer size (`-b`):
+     ```bash
+     ./proj05 -p 3 -b 10
+     ```
+
+</ProjectLayout>
+

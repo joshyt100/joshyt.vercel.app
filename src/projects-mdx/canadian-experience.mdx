@@ -1,0 +1,136 @@
+import React from 'react';
+import ProjectLayout from '../components/ProjectLayout';
+import CodeBlock from '../components/CodeBlock';
+
+<ProjectLayout
+  title="Canadian Experience - Sparty In A Box"
+  description="A project that lets you create animations featuring characters like Harold and Sparty, combined with two unique machines."
+  techStack={['C++', 'wxWidgets']}
+  features={[
+    'Create fun animations with characters and jack-in-a-box style machines',
+    'Control animations with a slider for precise timing',
+    'Set machines to activate at specific moments in the animation',
+    'Save and replay animations of any length with ease'
+  ]}
+  githubLink="https://github.com/joshyt100/canadian-experience"
+>
+  ## Overview  
+
+  **Canadian Experience - Sparty In A Box** is a project where you design and animate characters like Harold and Sparty alongside mechanical systems. The program gives you the tools to build and integrate machines into a timeline, where you can control when they start and stop, and bring everything together in a custom animation.
+
+  ## Key Features  
+
+  - **Custom Animations**: Animate Harold, Sparty, and your machines together in a fully controllable timeline.  
+  - **Machine Design**: Build machines using components like cranks, shafts, and cams, and integrate them seamlessly.  
+  - **Precise Control**: Use a slider to adjust timing and control when machines activate.  
+  - **Save and Replay**: Save animations to revisit or share them later.  
+  - **Creative Freedom**: Create animations of any length with unlimited possibilities.  
+
+  ## How It Works  
+
+  ### Build Machines  
+
+  Use modular components to create machines. Here’s an example of assembling a machine with cranks and pulleys:
+
+  <CodeBlock
+    code={`std::shared_ptr<Machine> MachineCFactory::Create() {
+    auto machine = std::make_shared<Machine>();
+
+    // Add a crank
+    auto crank = std::make_shared<Crank>();
+    crank->SetLocation(wxPoint(135, -175));
+    crank->SetSpeed(0.5);
+
+    // Add a shaft and connect it to the crank
+    auto shaft = std::make_shared<Shaft>();
+    shaft->SetLocation(wxPoint(90, -190));
+    crank->GetSource()->AddSink(shaft);
+    shaft->SetSize(8, 55);
+
+    // Add pulleys and connect them
+    auto pulley1 = std::make_shared<Pulley>(70);
+    pulley1->SetLocation(wxPoint(100, -60));
+
+    auto pulley2 = std::make_shared<Pulley>(40);
+    pulley2->SetLocation(wxPoint(100, -190));
+    shaft->GetSource()->AddSink(pulley2);
+    pulley2->BeltTo(pulley1);
+    pulley2->GetSource()->AddSink(pulley1);
+
+    machine->AddComponent(crank);
+    machine->AddComponent(shaft);
+    machine->AddComponent(pulley1);
+    machine->AddComponent(pulley2);
+
+    return machine;
+}`}
+    language="cpp"
+  />
+
+  ### Integrate Characters  
+
+  Add Harold and Sparty to make your animations more engaging. Here’s how Sparty’s spring mechanism works:
+
+  <CodeBlock
+    code={`Sparty::Sparty(const std::wstring& imagePath, int size, double extendedLength, double springWidth, int numLinks)
+    : mUncompressedLength(extendedLength), mSpringWidth(springWidth), mNumLinks(numLinks) {
+    // Configure Sparty's polygon
+    mSparty.Rectangle(-size / 2, extendedLength / 2, size, size);
+    mSparty.SetImage(imagePath);
+
+    // Initialize spring variables
+    mCompressedLength = extendedLength * 0.2;
+    mCurrentLength = mCompressedLength;
+}
+
+void Sparty::Draw(std::shared_ptr<wxGraphicsContext> graphics) {
+    DrawSpring(graphics, GetLocation().x, GetLocation().y, mCurrentLength, mSpringWidth, mNumLinks);
+    mSparty.DrawPolygon(graphics, GetLocation().x, GetLocation().y - mCurrentLength - 125);
+}`}
+    language="cpp"
+  />
+
+  ### Animate and Control  
+
+  Use the slider to set when machines activate and fine-tune the timing. Here’s an example of connecting components for synchronized action:
+
+  <CodeBlock
+    code={`auto cam = std::make_shared<Cam>(imagesDir);
+auto shaftTopLeft = std::make_shared<Shaft>();
+shaftTopLeft->SetSize(8, 60);
+shaftTopLeft->SetLocation(wxPoint(-110, -190));
+cam->SetLocation(wxPoint(-80, -190));
+cam->AddActivationTarget(box);
+cam->AddActivationTarget(sparty);
+pulley3->GetSource()->AddSink(shaftTopLeft);
+shaftTopLeft->GetSource()->AddSink(cam);
+
+machine->AddComponent(shaftTopLeft);
+machine->AddComponent(cam);`}
+    language="cpp"
+  />
+
+  ## How to Use  
+
+  1. **Clone the Repository**:
+     ```bash
+     git clone https://github.com/joshyt100/canadian-experience.git
+     cd canadian-experience
+     ```
+
+  2. **Open the Project**: Use CLion or your preferred C++ IDE to open the project.
+
+  3. **Build and Run**: Build the project using CMake and run the `MachineDemo` executable to test your machine.
+
+  4. **Animate with Sliders**: Use the slider to adjust playback and control when machines activate.
+
+  5. **Save and Replay**: Save your animations and replay them seamlessly.
+
+  ## Why It’s Fun  
+
+  - **Bring Characters to Life**: Watch Harold and Sparty interact with your machines in creative animations.  
+  - **Total Control**: Build animations of any length with precise timing.  
+  - **Replayable Creations**: Save your animations and enjoy them any time.  
+
+</ProjectLayout>
+

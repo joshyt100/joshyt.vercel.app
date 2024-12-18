@@ -13,7 +13,7 @@ const ProjectNavbar = () => {
       if (projectsSection) {
         projectsSection.scrollIntoView({ behavior: 'instant' });
       }
-    }, 10);
+    }, 15);
   };
 
   return (

@@ -1,0 +1,71 @@
+import ProjectLayout from '../components/ProjectLayout';
+
+<ProjectLayout
+  title="Dotfiles"
+  description="A collection of personalized configurations to streamline development, featuring Neovim (NvChad), Alacritty, AeroSpace, and Starship."
+  githubLink="https://github.com/joshyt100/dotfiles"
+  techStack={["Neovim (NvChad)", "Alacritty", "Starship", "AeroSpace"]}
+  features={[
+    "Custom Neovim setup with LSP and autoformatting support",
+    "Consistent theme across Alacritty terminal and Starship prompt",
+    "AeroSpace window manager for efficient tiling and workspace navigation",
+    "Language support for Python, JavaScript, Go, and more",
+  ]}
+>
+  ## Overview  
+
+  These **dotfiles** are designed to create a clean, efficient, and visually appealing development environment. From a powerful Neovim configuration to a responsive window manager setup, everything works together to boost productivity and streamline daily workflows.  
+
+  ![Dotfiles Preview](../public/dot-files-preview.png)  
+
+  ## Key Features ✨  
+
+  - **Neovim with NvChad**:  
+    - Fully customized with support for LSP servers and autoformatting tools like `black` (Python) and `prettierd` (JavaScript).  
+    - Sleek `poimandres` theme for a modern look.  
+
+  - **Alacritty and Starship**:  
+    - Alacritty terminal configured with the `tokyo-night-storm` theme.  
+    - Starship prompt tailored with sections for Node.js, Go, Python, and more.  
+
+  - **AeroSpace Window Manager**:  
+    - Smooth tiling layouts for multitasking.  
+    - Custom keybindings for quick navigation and workspace management.  
+
+  ## Language Support 🌍  
+
+  - **Web Development**: JavaScript, TypeScript, HTML, CSS, and TailwindCSS.  
+  - **Backend Development**: Python (Pyright, Black, isort) and Go (gopls, golines).  
+  - **Others**: Lua, C, C++, Rust, and PHP.  
+
+  ## How to Set It Up 🚀  
+
+  1. Clone the repository:  
+     ```bash
+     git clone https://github.com/joshyt100/dotfiles.git
+     cd dotfiles
+     ```  
+
+  2. Set up Neovim:  
+     ```bash
+     cp -r nvim ~/.config/
+     nvim
+     ```  
+
+  3. Configure Alacritty and Starship:  
+     ```bash
+     cp alacritty.yml ~/.config/alacritty/alacritty.yml
+     cp starship.toml ~/.config/starship.toml
+     ```  
+
+  4. Install AeroSpace window manager:  
+     ```bash
+     cp aerospace.toml ~/.aerospace.toml
+     ```  
+
+  ## Why Use These Dotfiles? 🛠️  
+
+  These configurations save time by reducing setup overhead, ensuring your development tools look great and perform consistently across different projects.  
+
+</ProjectLayout>
+

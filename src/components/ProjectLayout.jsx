@@ -11,10 +11,10 @@ const ProjectLayout = ({ title, description, techStack = [], features = [], gith
 
 
   return (
-    <div className="min-h-screen bg-zinc-100 dark:bg-black dark:text-white px-6 sm:px-10 py-6">
+    <div className="min-h-screen bg-zinc-100 dark:bg-zinc-900 dark:text-white px-6 sm:px-10 py-6">
       {/* Project Header */}
       <header className="mb-8">
-        <h1 className="text-3xl sm:text-4xl text-center font-bold mt-16 mb-3 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl text-center font-bold mt-20 mb-3 tracking-tight">
           {title}
         </h1>
         <p className="text-base sm:text-lg text-center text-gray-700 dark:text-gray-300 mb-4 leading-relaxed max-w-2xl mx-auto">
@@ -35,14 +35,14 @@ const ProjectLayout = ({ title, description, techStack = [], features = [], gith
       </header>
 
       {/* Full-width Separator */}
-      <hr className="bg-gray-300 dark:bg-gray-700 border-0 h-px mb-6" />
+      <hr className="bg-gray-400 dark:bg-gray-600 border-0 h-px mb-6" />
 
       {/* Project Details */}
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         {/* Tech Stack */}
         <section className="mb-6">
           <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Tech Stack</h2>
-          <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-400">
+          <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
             {techStack.map((tech, index) => (
               <li key={index}>{tech}</li>
             ))}
@@ -52,7 +52,7 @@ const ProjectLayout = ({ title, description, techStack = [], features = [], gith
         {/* Features */}
         <section className="mb-6">
           <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Features</h2>
-          <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-400">
+          <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
             {features.map((feature, index) => (
               <li key={index}>{feature}</li>
             ))}
@@ -60,7 +60,7 @@ const ProjectLayout = ({ title, description, techStack = [], features = [], gith
         </section>
 
         {/* Main Content */}
-        <main className="text-gray-700 dark:text-gray-300 text-base leading-relaxed space-y-4">
+        <main className="text-gray-700 dark:text-gray-300 text-base leading-relaxed space-y-6">
           {children}
         </main>
       </div>
