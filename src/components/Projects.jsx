@@ -64,7 +64,7 @@ const Projects = () => {
             </div>
 
             {/* Project Boxes */}
-            <div className="grid grid-cols-1 mb-80 md:grid-cols-2 xl:grid-cols-3 gap-10 lg:mx-15">
+            <div className="grid grid-cols-2 mb-80 md:grid-cols-2 xl:grid-cols-3 gap-10 lg:mx-15">
               {projects.map((project, index) => (
                 <Link
                   to={project.link}

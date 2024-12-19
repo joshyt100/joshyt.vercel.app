@@ -38,7 +38,7 @@ const ProjectLayout = ({ title, description, techStack = [], features = [], gith
       <hr className="bg-gray-400 dark:bg-gray-600 border-0 h-px mb-6" />
 
       {/* Project Details */}
-      <div className="max-w-5xl mx-auto">
+      <div className=" w-2xl max-w-5xl mx-auto">
         {/* Tech Stack */}
         <section className="mb-6">
           <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Tech Stack</h2>

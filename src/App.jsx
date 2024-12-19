@@ -27,7 +27,11 @@ function App() {
     if ('scrollRestoration' in window.history) {
       window.history.scrollRestoration = 'manual';
     }
-    if (location.pathname === '/') {
+    const isPageReload = performance.getEntriesByType('navigation').some(
+      (nav) => nav.type === 'reload'
+    );
+
+    if (!isPageReload && location.pathname === '/') {
       const hash = location.hash || '';
       if (hash === '#projects') {
         const projectsSection = document.getElementById('projects');
