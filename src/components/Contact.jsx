@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react';
 import emailjs from 'emailjs-com';
 import { useNavigate } from 'react-router-dom';
+import { FaArrowLeft } from 'react-icons/fa';
 
 const Contact = () => {
   const formRef = useRef();
@@ -49,13 +50,11 @@ const Contact = () => {
 
     >
       {/* Back Arrow */}
-      <div className="absolute top-20 left-10">
-        <button
+      <div className="absolute top-20 left-10 lg:top-20 lg:left-40 sm:left-10 sm:top-20">
+        <FaArrowLeft
           onClick={() => navigate('/')}
-          className="text-black dark:text-white text-4xl font-bold hover:text-gray-400"
-        >
-          ←
-        </button>
+          className="text-black dark:text-white text-2xl font-bold dark:hover:text-gray-300 hover:text-gray-400"
+        />
       </div>
 
       <h2 className="text-4xl font-bold mb-6 text-center text-black dark:text-white">Get in Touch</h2>
