@@ -71,12 +71,12 @@ const Projects = () => {
                            transition-transform duration-300 border border-zinc-600"
                 >
                   <div>
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl 2xl:text-4xl text-black font-bold 
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl text-black font-bold 
                                 mb-2 sm:mb-3 md:mb-4 group-hover:text-purple-400 
                                 dark:group-hover:text-purple-400 dark:text-white transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-xs sm:text-sm md:md lg:text-lg 2xl:text-xl font-normal text-zinc-800 
+                    <p className="text-xs sm:text-sm md:md lg:text-xl font-normal text-zinc-800 
                                text-pretty group-hover:text-gray-700 dark:text-zinc-300 
                                dark:group-hover:text-gray-400 transition-colors duration-300 
                                mb-1 sm:mb-2 md:mb-3">

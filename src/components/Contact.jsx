@@ -50,7 +50,7 @@ const Contact = () => {
 
     >
       {/* Back Arrow */}
-      <div className="absolute top-20 left-10 lg:top-20 lg:left-40 sm:left-10 sm:top-20">
+      <div className="absolute z-20 top-2 left-10 sm:top-20 sm:left-10 lg:top-20 lg:left-40 sm:left-10 sm:top-20">
         <FaArrowLeft
           onClick={() => navigate('/')}
           className="text-black dark:text-white text-2xl font-bold dark:hover:text-gray-300 hover:text-gray-400"
