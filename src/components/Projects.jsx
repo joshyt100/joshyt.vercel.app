@@ -48,10 +48,10 @@ const Projects = () => {
         className="relative flex-grow p-4 sm:pb-10 flex flex-col bg-transparent items-center"
       >
         <div className="relative w-full z-10">
-          <div className="rounded-2xl p-4 sm:p-6 md:p-10 pb-10 sm:pb-20 bg-zinc-800/5 backdrop-blur-md dark:bg-zinc-900/50 border border-white dark:border-zinc-800">
+          <div className="rounded-2xl p-4 sm:p-6 md:p-10 pb-10 sm:pb-20 bg-zinc-800/5 backdrop-blur-md dark:backdrop-blur-xl dark:bg-gray-500/10 border border-white dark:border-zinc-900">
             {/* Header */}
             <div className="text-center mb-6 sm:mb-10">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl mt-6 sm:mt-12 font-bold mb-3 sm:mb-4 md:mb-6 text-black dark:text-white">
+              <h2 className="text-2xl sm:text-4xl md:text-4xl lg:text-6xl mt-6 sm:mt-12 font-bold mb-3 sm:mb-4 md:mb-6 text-black dark:text-white">
                 Projects
               </h2>
               <p className="text-sm sm:text-base md:text-xl font-semibold max-w-4xl mx-auto text-zinc-800 dark:text-zinc-300 leading-relaxed px-2">
@@ -66,17 +66,17 @@ const Projects = () => {
                 <Link
                   to={project.link}
                   key={index}
-                  className="group relative bg-zinc-100/85 dark:bg-gradient-to-tr from-zinc-900 to-black shadow-2xl 
-                           p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl hover:scale-105 hover:shadow-2xl 
-                           transition-transform duration-300 border border-zinc-600"
+                  className="group relative bg-zinc-100/85 dark:bg-black shadow-2xl 
+                           p-4 sm:p-6 md:p-8 lg:p-12 rounded-xl hover:scale-105 hover:shadow-2xl 
+                           transition-transform duration-300 border border-zinc-300 dark:border-zinc-800"
                 >
                   <div>
-                    <h3 className="text-xl sm:text-2xl lg:text-3xl text-black font-bold 
+                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black font-bold 
                                 mb-2 sm:mb-3 md:mb-4 group-hover:text-purple-400 
                                 dark:group-hover:text-purple-400 dark:text-white transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-xs sm:text-sm md:md lg:text-xl font-normal text-zinc-800 
+                    <p className="text-xs sm:text-lg md:text-lg lg:text-xl xl:text-xl font-normal text-zinc-800 
                                text-pretty group-hover:text-gray-700 dark:text-zinc-300 
                                dark:group-hover:text-gray-400 transition-colors duration-300 
                                mb-1 sm:mb-2 md:mb-3">

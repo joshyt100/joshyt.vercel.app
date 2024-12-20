@@ -5,13 +5,10 @@ import { FaGithub } from 'react-icons/fa';
 const ProjectLayout = ({ title, description, techStack = [], features = [], githubLink, children }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
-
   }, []);
 
-
-
   return (
-    <div className="min-h-screen bg-zinc-100 dark:bg-zinc-900 dark:text-white px-6 sm:px-10 py-6">
+    <div className="min-h-screen bg-zinc-100 dark:bg-zinc-900 dark:text-white px-6 sm:px-10 py-6 overflow-x-hidden">
       {/* Project Header */}
       <header className="mb-8">
         <h1 className="text-3xl sm:text-4xl text-center font-bold mt-20 mb-3 tracking-tight">
@@ -38,7 +35,7 @@ const ProjectLayout = ({ title, description, techStack = [], features = [], gith
       <hr className="bg-gray-400 dark:bg-gray-600 border-0 h-px mb-6" />
 
       {/* Project Details */}
-      <div className=" w-2xl max-w-5xl mx-auto">
+      <div className="w-full max-w-5xl mx-auto">
         {/* Tech Stack */}
         <section className="mb-6">
           <h2 className="text-xl font-semibold mb-2 text-gray-800 dark:text-gray-200">Tech Stack</h2>

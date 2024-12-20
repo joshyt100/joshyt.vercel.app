@@ -70,7 +70,7 @@ function App() {
               </div>
               <main className="relative z-10">
                 <Home />
-                <div id="projects" className="relative scroll-mt-20">
+                <div id="projects" className="relative scroll-mt-5">
                   <Projects />
                 </div>
               </main>

@@ -4,7 +4,7 @@ import { Highlight, themes } from 'prism-react-renderer';
 
 const CodeBlock = ({ code, language }) => {
   return (
-    <Highlight theme={themes.dracula} code={code.trim()} language={language}>
+    <Highlight theme={themes.nightOwl} code={code.trim()} language={language}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
         <pre className={`${className} p-4 rounded-lg overflow-x-auto`} style={style}>
           {tokens.map((line, i) => (
