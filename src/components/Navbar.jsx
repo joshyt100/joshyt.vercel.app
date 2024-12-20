@@ -22,9 +22,9 @@ const Navbar = ({ theme, toggleTheme }) => {
   return (
     <nav className="fixed top-0 left-0 w-full bg-transparent border-b border-gray-500/10 backdrop-blur-lg text-black dark:text-white z-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-10 sm:h-20">
           {/* Logo */}
-          <div className="text-2xl font-bold tracking-wide">
+          <div className="invisible sm:visible text-2xl font-bold tracking-wide">
             <button
               onClick={() => scrollToSection('home')}
               className="hover:text-gray-700 dark:hover:text-gray-300 transition-opacity opacity-50 hover:opacity-100"
@@ -85,7 +85,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               className="hover:text-gray-700 dark:hover:text-gray-300 text-black dark:text-white transition opacity-80"
               aria-label="GitHub"
             >
-              <FaGithub className="h-7 w-7" />
+              <FaGithub className="sm:h-7 sm:w-7 h-6 w-6" />
             </a>
 
             {/* LinkedIn */}
@@ -96,7 +96,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               className="hover:text-gray-700 dark:hover:text-gray-300 text-sky-600 transition opacity-80"
               aria-label="LinkedIn"
             >
-              <FaLinkedin className="h-7 w-7" />
+              <FaLinkedin className="h-6 w-6 sm:h-7 sm:w-7" />
             </a>
 
             {/* Hamburger Menu (Mobile Only) */}

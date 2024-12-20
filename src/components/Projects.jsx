@@ -45,43 +45,41 @@ const Projects = () => {
     <div className="flex flex-col min-h-screen z-10">
       <section
         id="projects"
-        className="relative flex-grow pb-10 mx-1 sm:mx-4 flex flex-col bg-transparent items-center"
+        className="relative flex-grow p-4 sm:pb-10 flex flex-col bg-transparent items-center"
       >
         <div className="relative w-full z-10">
-          <div className="rounded-2xl p-10 pb-20 bg-zinc-800/5 backdrop-blur-md dark:bg-zinc-900/50 border border-white dark:border-zinc-800">
+          <div className="rounded-2xl p-4 sm:p-6 md:p-10 pb-10 sm:pb-20 bg-zinc-800/5 backdrop-blur-md dark:bg-zinc-900/50 border border-white dark:border-zinc-800">
             {/* Header */}
-            <div className="text-center mb-10">
-              <h2 className="text-3xl md:text-6xl mt-12 font-bold mb-4 md:mb-6 text-black dark:text-white">
+            <div className="text-center mb-6 sm:mb-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-6xl mt-6 sm:mt-12 font-bold mb-3 sm:mb-4 md:mb-6 text-black dark:text-white">
                 Projects
               </h2>
-              <p className="text-base md:text-xl font-semibold max-w-4xl mx-auto text-zinc-800 dark:text-zinc-300 leading-relaxed">
+              <p className="text-sm sm:text-base md:text-xl font-semibold max-w-4xl mx-auto text-zinc-800 dark:text-zinc-300 leading-relaxed px-2">
                 Explore some of my most exciting projects showcasing innovative
                 solutions and creative designs.
               </p>
             </div>
 
             {/* Project Boxes */}
-            <div
-              className="
-                gap-1 md:gap-10 sm:gap-5 mx-0 
-                grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 
-                sm:mx-2 md:mx-4 lg:mx-15
-              "
-            >
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 mb-20 sm:mb-40 md:mb-60 lg:mb-80">
               {projects.map((project, index) => (
                 <Link
                   to={project.link}
                   key={index}
-                  className="group relative bg-zinc-100/85 dark:bg-gradient-to-tr from-zinc-900 to-black shadow-2xl p-6 md:p-12 
-                            rounded-2xl hover:scale-105 hover:shadow-2xl transition-transform duration-300 border border-zinc-600"
+                  className="group relative bg-zinc-100/85 dark:bg-gradient-to-tr from-zinc-900 to-black shadow-2xl 
+                           p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl hover:scale-105 hover:shadow-2xl 
+                           transition-transform duration-300 border border-zinc-600"
                 >
                   <div>
-                    <h3 className="text-lg sm:text-2xl md:text-3xl xl:text-4xl text-black font-bold mb-2 md:mb-4 
-                                group-hover:text-purple-400 dark:group-hover:text-purple-400 dark:text-white transition-colors duration-300">
+                    <h3 className="text-xl sm:text-2xl lg:text-3xl 2xl:text-4xl text-black font-bold 
+                                mb-2 sm:mb-3 md:mb-4 group-hover:text-purple-400 
+                                dark:group-hover:text-purple-400 dark:text-white transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-sm md:text-lg xl:text-xl font-normal text-zinc-800 text-pretty 
-                               group-hover:text-gray-700 dark:text-zinc-300 dark:group-hover:text-gray-400 transition-colors duration-300 mb-2 md:mb-3">
+                    <p className="text-xs sm:text-sm md:md lg:text-lg 2xl:text-xl font-normal text-zinc-800 
+                               text-pretty group-hover:text-gray-700 dark:text-zinc-300 
+                               dark:group-hover:text-gray-400 transition-colors duration-300 
+                               mb-1 sm:mb-2 md:mb-3">
                       {project.description}
                     </p>
                   </div>
@@ -96,4 +94,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
