@@ -6,10 +6,10 @@ const About = () => {
   return (
     <div className="bg-zinc-200 dark:bg-zinc-900 min-h-screen flex justify-center">
       {/* Main Container: limits maximum width and manages column layout */}
-      <div className="max-w-6xl w-full flex flex-col md:flex-row gap-10 items-start">
+      <div className="max-w-6xl w-full flex flex-col lg:flex-row gap-10 items-start">
 
         {/* Left Section: About Me */}
-        <div className="md:w-1/3 w-full  dark:bg-black dark:text-white mt-10 sm:mt-40 bg-white p-8 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg">
+        <div className="md:w-full lg:w-1/3 w-full  dark:bg-black dark:text-white mt-20 lg:mt-40 bg-white p-8 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg">
           <h2 className="text-3xl font-bold mb-6 dark:text-white text-black">About Me</h2>
           <p className="text-gray-600 leading-relaxed text-base dark:text-gray-300">
             Hello! I’m a computer science engineering student at Michigan State University, where I’ve explored a variety of tools and technologies through both coursework and real-world projects. My past experiences in software development have allowed me to write clean, efficient code and collaborate with different teams—an aspect I genuinely enjoy.
@@ -21,7 +21,7 @@ const About = () => {
         </div>
 
         {/* Right Section: Timeline */}
-        <div className="md:w-2/3 mt-10 sm:mt-40 w-full">
+        <div className="md:w-2/3 lg:mt-40 w-full">
           <h2 className="text-3xl font-bold mb-6 text-center md:text-left text-black dark:text-white">
             Work Experience
           </h2>
