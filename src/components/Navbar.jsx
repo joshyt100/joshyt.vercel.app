@@ -25,8 +25,8 @@ const Navbar = ({ theme, toggleTheme }) => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-transparent border-b border-gray-500/10 backdrop-blur-lg text-black dark:text-white z-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center h-10 sm:h-20">
+    <nav className="fixed top-0 left-0 w-full sm:h-16 2xl:h-20 bg-transparent border-b border-gray-500/10 backdrop-blur-lg text-black dark:text-white z-20 flex items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between w-full h-full">
         {/* Hamburger Menu (Mobile Only) */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -36,7 +36,7 @@ const Navbar = ({ theme, toggleTheme }) => {
         </button>
 
         {/* Centered Navigation Links (Desktop Only) */}
-        <div className="hidden md:flex space-x-6 text-lg absolute left-1/2 transform -translate-x-1/2">
+        <div className="hidden md:flex space-x-6 text-md 2xl:text-lg absolute left-1/2 transform -translate-x-1/2 items-center">
           <button
             onClick={() => scrollToSection('home')}
             className="hover:text-gray-700 dark:hover:text-gray-300 transition opacity-80"
