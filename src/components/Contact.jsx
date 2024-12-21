@@ -7,9 +7,10 @@ const Contact = () => {
   const formRef = useRef();
   const [isSubmitted, setIsSubmitted] = useState(false);
   const navigate = useNavigate();
-  console.log("env-service-id", import.meta.env.VITE_SERVICE_ID);
-  console.log("env-template-id", import.meta.env.VITE_TEMPLATE_ID);
-  console.log("env-public-key", import.meta.env.VITE_PUBLIC_KEY);
+  //Not exposing this in the console
+  //console.log("env-service-id", import.meta.env.VITE_SERVICE_ID);
+  //console.log("env-template-id", import.meta.env.VITE_TEMPLATE_ID);
+  //console.log("env-public-key", import.meta.env.VITE_PUBLIC_KEY);
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -31,7 +32,7 @@ const Contact = () => {
         import.meta.env.VITE_SERVICE_ID,
         import.meta.env.VITE_TEMPLATE_ID,
         fullFormData,
-        import.meta.env.VITE_PUBLIC_KEY
+        import.meta.env.VITE_PUBLIC_KEY,
       )
       .then(
         (result) => {
