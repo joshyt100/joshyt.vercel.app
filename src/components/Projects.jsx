@@ -56,7 +56,7 @@ const Projects = () => {
               </h2>
               <p className="text-sm sm:text-base md:text-xl font-semibold max-w-4xl mx-auto text-zinc-800 dark:text-zinc-300 leading-relaxed px-2">
                 Explore some of my most exciting projects showcasing innovative
-                solutions and creative designs.
+                solutions and creativity.
               </p>
             </div>
 
