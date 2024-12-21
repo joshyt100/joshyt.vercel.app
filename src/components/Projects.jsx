@@ -51,35 +51,35 @@ const Projects = () => {
           <div className="rounded-2xl p-4 sm:p-6 md:p-10 pb-10 sm:pb-20 bg-zinc-800/5 backdrop-blur-md dark:backdrop-blur-xl dark:bg-gray-500/10 border border-white dark:border-zinc-900">
             {/* Header */}
             <div className="text-center mb-6 sm:mb-10">
-              <h2 className="text-2xl sm:text-4xl md:text-4xl lg:text-6xl mt-6 sm:mt-12 font-bold mb-3 sm:mb-4 md:mb-6 text-black dark:text-white">
+              <h2 className="text-2xl sm:text-4xl md:text-4xl lg:text-4xl 2xl:text-6xl mt-6 sm:mt-12 font-bold mb-3 sm:mb-4 md:mb-6 text-black dark:text-white">
                 Projects
               </h2>
-              <p className="text-sm sm:text-base md:text-xl font-semibold max-w-4xl mx-auto text-zinc-800 dark:text-zinc-300 leading-relaxed px-2">
+              <p className="text-sm sm:text-base md:text-xl font-semibold max-w-4xl mx-auto lg:text-lg 2xl:text-xl text-zinc-800 dark:text-zinc-300 leading-relaxed px-2">
                 Explore some of my most exciting projects showcasing innovative
                 solutions and creativity.
               </p>
             </div>
 
             {/* Project Boxes */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 mb-20 sm:mb-40 md:mb-60 lg:mb-80">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-4 md:gap-6 lg:gap-6 2xl:gap-10 mb-10 sm:mb-20 md:mb-30 lg:mb-40 2xl:mb-60 ">
               {projects.map((project, index) => (
                 <Link
                   to={project.link}
                   key={index}
                   className="group relative bg-zinc-100/85 dark:bg-black shadow-2xl 
-                           p-4 sm:p-6 md:p-8 lg:p-12 rounded-xl hover:scale-105 hover:shadow-2xl 
+                           p-2 sm:p-4 md:p-8 xl:p-10 2xl:p-12 rounded-xl hover:scale-105 hover:shadow-2xl 
                            transition-transform duration-300 border border-zinc-300 dark:border-zinc-800"
                 >
                   <div>
-                    <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-black font-bold 
+                    <h3 className="text-xl sm:text-xl md:text-xl lg:text-2xl xl:text-2xl 2xl:text-4xl text-black font-bold 
                                 mb-2 sm:mb-3 md:mb-4 group-hover:text-purple-400 
                                 dark:group-hover:text-purple-400 dark:text-white transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-xs sm:text-lg md:text-lg lg:text-xl xl:text-xl font-normal text-zinc-800 
+                    <p className="text-xs sm:text-md md:text-lg lg:text-lg xl:text-md 2xl:text-xl font-normal text-zinc-800 
                                text-pretty group-hover:text-gray-700 dark:text-zinc-300 
                                dark:group-hover:text-gray-400 transition-colors duration-300 
-                               mb-1 sm:mb-2 md:mb-3">
+                                2xl:mb-3">
                       {project.description}
                     </p>
                   </div>
