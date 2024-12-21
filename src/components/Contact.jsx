@@ -49,13 +49,6 @@ const Contact = () => {
       className="min-h-screen bg-zinc-200 dark:bg-gradient-to-tr from-zinc-900 to-black text-white flex flex-col items-center justify-center p-8"
 
     >
-      {/* Back Arrow */}
-      <div className="absolute z-20 top-2 left-10 sm:top-20 sm:left-10 lg:top-20 lg:left-40 sm:left-10 sm:top-20">
-        <FaArrowLeft
-          onClick={() => navigate('/')}
-          className="text-black dark:text-white text-2xl font-bold dark:hover:text-gray-300 hover:text-gray-400"
-        />
-      </div>
 
       <h2 className="text-4xl font-bold mb-6 text-center text-black dark:text-white">Get in Touch</h2>
       <p className="text-lg text-black dark:text-white text-center mb-8">

@@ -5,6 +5,7 @@ import ProjectNavbar from './components/ProjectNavbar';
 import Home from './components/Home';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
+import About from './components/About';
 import ParticlesComponent from './components/ParticlesComponent';
 
 import SideQuest from './projects-mdx/sidequest.mdx';
@@ -84,6 +85,7 @@ function App() {
         <Route path="/projects/canadian-experience" element={<CanadianExperience />} />
         <Route path="/projects/purchase-order-system" element={<PurchaseOrderSystem />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/about" element={<About />} />
       </Routes>
     </div>
   );
