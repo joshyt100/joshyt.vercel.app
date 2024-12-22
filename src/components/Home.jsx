@@ -98,7 +98,7 @@ const Home = () => {
           }`}
       >
         <p className="text-sm sm:text-md md:text-md lg:text-md 2xl:text-lg font-nm text-black dark:text-white">
-          Built with React.js, Vite, TailwindCSS, and Particles.js
+          Built with React.js, Vite, TailwindCSS, and MDX
         </p>
       </div>
     </section>
