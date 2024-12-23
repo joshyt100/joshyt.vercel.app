@@ -25,7 +25,7 @@ const Navbar = ({ theme, toggleTheme }) => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full sm:h-16 2xl:h-20 bg-transparent border-b border-gray-500/10 backdrop-blur-lg text-black dark:text-white z-20 flex items-center">
+    <nav className="fixed top-0 left-0 w-full sm:h-16 2xl:h-18 bg-transparent border-b border-gray-500/10 backdrop-blur-lg text-black dark:text-white z-20 flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between w-full h-full">
         {/* Hamburger Menu (Mobile Only) */}
         <button
