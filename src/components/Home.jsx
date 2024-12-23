@@ -76,7 +76,7 @@ const Home = () => {
             Joshua Thomas
           </motion.h1>
           <motion.p
-            className=" text-lg sm:text-2xl md:text-3xl 2xl:text-4xl mt-4 text-black dark:text-white"
+            className=" text-lg sm:text-2xl md:text-3xl 2xl:text-3xl mt-4 text-black dark:text-white"
             variants={{
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 0.85, y: 0 },
