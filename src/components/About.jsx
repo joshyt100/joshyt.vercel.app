@@ -16,7 +16,7 @@ const About = () => {
         <div className="w-full lg:w-full 2xl:w-1/3 dark:bg-black dark:text-white mt-10 lg:mt-20 2xl:mt-28 bg-white p-8 rounded-lg shadow-md transition-shadow duration-300 hover:shadow-lg">
           <h2 className="text-3xl font-bold mb-6 dark:text-white text-black">About Me</h2>
           <p className="text-gray-600 leading-relaxed text-base dark:text-gray-300">
-            Hello! I’m a computer science engineering student at Michigan State University, where I’ve explored a variety of tools and technologies through both coursework and real-world projects. My past experiences in software development have allowed me to write clean, efficient code and collaborate with different teams—an aspect I genuinely enjoy.
+            Hello! I’m a Computer Science student at Michigan State University, where I’ve explored a variety of tools and technologies through both coursework and real-world projects. My past experiences in software development have allowed me to write clean, efficient code and collaborate with different teams—an aspect I genuinely enjoy.
 
             What really draws me into this field is the chance to explore new frameworks and discover creative ways to tackle challenges. I love the process of turning an abstract idea into a concrete solution that people can use and appreciate. It’s incredibly satisfying to see how thoughtful coding and design can simplify tasks and make someone’s day a bit easier.
 
