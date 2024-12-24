@@ -7,6 +7,15 @@ export default defineConfig({
     react(), // React support
     mdx(),   // MDX support
   ],
+  build: {
+    rollupOptions: {
+      // Ensure MDX content is processed and bundled correctly
+      input: 'index.html',
+      output: {
+        // Customize output if needed, otherwise Vite handles it by default
+      },
+    },
+  },
   server: {
     hmr: {
       overlay: false, // Optional: Disable error overlay if it becomes disruptive
