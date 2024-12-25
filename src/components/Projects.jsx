@@ -67,7 +67,7 @@ const Projects = () => {
                   key={index}
                   className="group relative bg-zinc-100/85 dark:bg-black shadow-2xl 
                           p-4 w-full sm:p-5 md:p-7 xl:p-7 2xl:p-10 rounded-xl hover:scale-105 hover:shadow-2xl 
-                           transition-transform duration-300 border border-zinc-300 dark:border-zinc-800"
+                           transition-transform duration-300 border border-zinc-300 dark:border-zinc-900"
                 >
                   <div>
                     <h3 className="text-xl sm:text-xl md:text-xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-black font-bold 

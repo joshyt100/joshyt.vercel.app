@@ -25,7 +25,7 @@ const About = ({ theme }) => {
         </div>
 
         {/* Right Section: Timeline */}
-        <div className="w-full lg:w-7/12  lg:mt-20 2xl:mt-28">
+        <div className="w-full lg:w-2/3  lg:mt-20 2xl:mt-28">
           <h2 className="text-3xl font-bold mt-10 lg:mt-0 mb-6 text-center md:text-left text-black dark:text-white">
             Work Experience
           </h2>
