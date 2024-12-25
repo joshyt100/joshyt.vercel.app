@@ -3,7 +3,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import { useEffect } from 'react';
 import 'react-vertical-timeline-component/style.min.css';
 
-const About = () => {
+const About = ({ theme }) => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [])
@@ -35,7 +35,7 @@ const About = () => {
             <VerticalTimelineElement
               date="May 2024 – August 2024"
               dateClassName="text-gray-900 dark:text-white"
-              contentStyle={{ background: 'transparent', boxShadow: 'none' }}
+              contentStyle={{ background: theme === 'dark' ? 'black' : 'white', boxShadow: 'none' }}
               contentArrowStyle={{ borderRight: '7px solid transparent' }}
               iconStyle={{
                 background: '#5D3FD3',
@@ -56,7 +56,7 @@ const About = () => {
             <VerticalTimelineElement
               date="January 2024 – April 2024"
               dateClassName="text-gray-900 dark:text-white"
-              contentStyle={{ background: 'transparent', boxShadow: 'none' }}
+              contentStyle={{ background: theme === 'dark' ? 'black' : 'white', boxShadow: 'none' }}
               contentArrowStyle={{ borderRight: '7px solid transparent' }}
               iconStyle={{
                 background: '#5D3FD3',
@@ -77,7 +77,7 @@ const About = () => {
             <VerticalTimelineElement
               date="October 2023 – December 2023"
               dateClassName="text-gray-900 dark:text-white"
-              contentStyle={{ background: 'transparent', boxShadow: 'none' }}
+              contentStyle={{ background: theme === 'dark' ? 'black' : 'white', boxShadow: 'none' }}
               contentArrowStyle={{ borderRight: '7px solid transparent' }}
               iconStyle={{
                 background: '#5D3FD3',

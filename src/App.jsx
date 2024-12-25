@@ -85,7 +85,7 @@ function App() {
         <Route path="/projects/canadian-experience" element={<CanadianExperience />} />
         <Route path="/projects/purchase-order-system" element={<PurchaseOrderSystem />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/about" element={<About />} />
+        <Route path="/about" element={<About theme={theme} />} />
       </Routes>
     </div>
   );
