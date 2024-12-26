@@ -70,7 +70,7 @@ const ParticlesComponent = ({ id, theme }) => {
           straight: false,
         },
         number: {
-          value: 250, // Default value for larger screens
+          value: 255, // Default value for larger screens
         },
         opacity: {
           value: 1.0,
@@ -82,8 +82,8 @@ const ParticlesComponent = ({ id, theme }) => {
           value: { min: 2, max: 3 },
         },
         density: {
-          enable: false,
-        }
+          enable: false, // Disable density for more particles
+        },
       },
       detectRetina: true,
       responsive: [
@@ -93,7 +93,7 @@ const ParticlesComponent = ({ id, theme }) => {
           options: {
             particles: {
               number: {
-                value: 60, // Set particles to 40 on mobile devices
+                value: 55, // Set particles to 40 on mobile devices
               },
               size: {
                 value: { min: 3, max: 4 }, // Make particles larger on mobile
