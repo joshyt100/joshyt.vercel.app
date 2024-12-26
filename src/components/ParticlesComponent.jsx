@@ -90,7 +90,7 @@ const ParticlesComponent = ({ id, theme }) => {
           options: {
             particles: {
               number: {
-                value: 50, // Set particles to 40 on mobile devices
+                value: 25, // Set particles to 40 on mobile devices
               },
               size: {
                 value: { min: 3, max: 4 }, // Make particles larger on mobile
