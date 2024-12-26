@@ -85,12 +85,12 @@ const ParticlesComponent = ({ id, theme }) => {
       detectRetina: true,
       responsive: [
         {
-          maxWidth: 385, // Max width for mobile devices
+          maxWidth: 500, // Max width for mobile devices
           mode: "canvas", // Ensures the responsiveness targets the canvas
           options: {
             particles: {
               number: {
-                value: 20, // Set particles to 40 on mobile devices
+                value: 50, // Set particles to 40 on mobile devices
               },
               size: {
                 value: { min: 3, max: 4 }, // Make particles larger on mobile
