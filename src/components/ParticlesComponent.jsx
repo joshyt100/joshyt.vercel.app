@@ -38,6 +38,15 @@ const ParticlesComponent = ({ id, theme }) => {
             mode: "grab",
           },
         },
+        responsive: [{
+          maxWidth: 450,
+          options: {
+            particles: {
+              number: { limit: 50 },
+            },
+          }
+        }],
+
         modes: {
           push: {
             distance: 150,
