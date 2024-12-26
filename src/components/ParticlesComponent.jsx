@@ -53,7 +53,7 @@ const ParticlesComponent = ({ id, theme }) => {
           value: theme === "dark" ? "#5D3FD3" : "#5D3FD3", // Particle Color
         },
         links: {
-          color: theme === "dark" ? "#FFFFFF" : "#0284c7", // Link color adapts to theme
+          color: theme === "dark" ? "#FFFFFF" : "#000000", // Link color adapts to theme
           distance: 150,
           enable: true,
           opacity: 1,
@@ -70,7 +70,7 @@ const ParticlesComponent = ({ id, theme }) => {
           straight: false,
         },
         number: {
-          value: 275, // Default value for larger screens
+          value: 250, // Default value for larger screens
         },
         opacity: {
           value: 1.0,
@@ -81,6 +81,9 @@ const ParticlesComponent = ({ id, theme }) => {
         size: {
           value: { min: 2, max: 3 },
         },
+        density: {
+          enable: false,
+        }
       },
       detectRetina: true,
       responsive: [
