@@ -38,6 +38,15 @@ const ParticlesComponent = ({ id, theme }) => {
             mode: "grab",
           },
         },
+        responsive: [{
+          maxWidth: 500,
+          options: {
+            particles: {
+              number: 0,
+            },
+          }
+        }],
+
         modes: {
           push: {
             distance: 150,
@@ -53,7 +62,7 @@ const ParticlesComponent = ({ id, theme }) => {
           value: theme === "dark" ? "#5D3FD3" : "#5D3FD3", // Particle Color
         },
         links: {
-          color: theme === "dark" ? "#FFFFFF" : "#000000", // Link color adapts to theme
+          color: theme === "dark" ? "#FFFFFF" : "#000000", // Lin 0284c7 ewcolor adapts to theme
           distance: 150,
           enable: true,
           opacity: 1,
@@ -70,7 +79,10 @@ const ParticlesComponent = ({ id, theme }) => {
           straight: false,
         },
         number: {
-          value: 255, // Default value for larger screens
+          density: {
+            enable: true,
+          },
+          value: 260,
         },
         opacity: {
           value: 1.0,
@@ -81,30 +93,8 @@ const ParticlesComponent = ({ id, theme }) => {
         size: {
           value: { min: 2, max: 3 },
         },
-        density: {
-          enable: false, // Disable density for more particles
-        },
       },
       detectRetina: true,
-      responsive: [
-        {
-          maxWidth: 500, // Max width for mobile devices
-          mode: "canvas", // Ensures the responsiveness targets the canvas
-          options: {
-            particles: {
-              number: {
-                value: 55, // Set particles to 40 on mobile devices
-              },
-              size: {
-                value: { min: 3, max: 4 }, // Make particles larger on mobile
-              },
-              density: {
-                enable: false, // Disable density for more particles
-              },
-            },
-          },
-        },
-      ],
     }),
     [theme] // Recalculate options when theme changes
   );
