@@ -8,7 +8,7 @@ const ProjectLayout = ({ title, description, techStack = [], features = [], gith
   }, []);
 
   return (
-    <div className="min-h-screen bg-zinc-100 dark:bg-zinc-900 dark:text-white px-6 sm:px-10 py-6 overflow-hidden">
+    <div className="min-h-screen bg-zinc-100 dark:bg-zinc-950 dark:text-white px-6 sm:px-10 py-6 overflow-hidden">
       {/* Project Header */}
       <header className="mb-8">
         <h1 className="text-3xl sm:text-4xl text-center font-bold mt-20 mb-3 tracking-tight">
