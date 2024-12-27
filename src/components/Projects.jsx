@@ -48,7 +48,7 @@ const Projects = () => {
         className="relative flex-grow p-0 md:p-2 xl:p-3 2xl:p-4 sm:pb-10 flex flex-col bg-transparent items-center"
       >
         <div className="relative w-full z-10">
-          <div className="rounded-xl p-5 sm:p-6 md:p-8 lg:p-10 pb-10 sm:pb-20 bg-zinc-800/5 backdrop-blur-md dark:backdrop-blur-xl dark:bg-gray-500/10 border border-zinc-200 dark:border-zinc-900">
+          <div className="rounded-xl p-5 sm:p-6 md:p-8 lg:p-10 pb-10 sm:pb-20 bg-zinc-800/5 backdrop-blur-md dark:backdrop-blur-xl dark:bg-zinc-600/25 border border-zinc-200 dark:border-zinc-900">
             <div className="text-center mb-6 sm:mb-10">
               <h2 className="text-2xl sm:text-4xl md:text-4xl lg:text-5xl 2xl:text-5xl mt-4 font-bold mb-3 sm:mb-4 md:mb-5 xl:mb-5 text-black dark:text-white">
                 Projects
