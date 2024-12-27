@@ -35,7 +35,7 @@ const About = ({ theme }) => {
             <VerticalTimelineElement
               date="May 2024 – August 2024"
               dateClassName="text-gray-900 dark:text-white"
-              contentStyle={{ background: theme === 'dark' ? '#18181B' : 'white', boxShadow: 'none' }}
+              contentStyle={{ background: theme === 'dark' ? '#18181B' : 'white', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}
               contentArrowStyle={{ borderRight: '7px solid transparent' }}
               iconStyle={{
                 background: '#5D3FD3',
@@ -56,7 +56,7 @@ const About = ({ theme }) => {
             <VerticalTimelineElement
               date="January 2024 – April 2024"
               dateClassName="text-gray-900 dark:text-white"
-              contentStyle={{ background: theme === 'dark' ? '#18181B' : 'white', boxShadow: 'none' }}
+              contentStyle={{ background: theme === 'dark' ? '#18181B' : 'white', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}
               contentArrowStyle={{ borderRight: '7px solid transparent' }}
               iconStyle={{
                 background: '#5D3FD3',
@@ -77,7 +77,7 @@ const About = ({ theme }) => {
             <VerticalTimelineElement
               date="October 2023 – December 2023"
               dateClassName="text-gray-900 dark:text-white"
-              contentStyle={{ background: theme === 'dark' ? '#18181B' : 'white', boxShadow: 'none' }}
+              contentStyle={{ background: theme === 'dark' ? '#18181B' : 'white', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}
               contentArrowStyle={{ borderRight: '7px solid transparent' }}
               iconStyle={{
                 background: '#5D3FD3',
