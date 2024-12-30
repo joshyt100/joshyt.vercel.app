@@ -67,7 +67,7 @@ const Navbar = ({ theme, toggleTheme }) => {
         <div className="flex-grow"></div>
 
         {/* Right Section: Theme Toggle & Social Links */}
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center sm: space-x-5 lg:space-x-6">
           {/* GitHub Link */}
           <a
             href="https://github.com/joshyt100"

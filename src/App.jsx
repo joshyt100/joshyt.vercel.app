@@ -71,7 +71,7 @@ function App() {
               </div>
               <main className="relative z-10">
                 <Home />
-                <div id="projects" className="relative scroll-mt-4">
+                <div id="projects" className="relative scroll-mt-4 sm:scroll-mt-10 md:scroll-mt-4">
                   <Projects />
                 </div>
               </main>
