@@ -49,7 +49,7 @@ const Projects = () => {
         className="relative flex-grow p-0 md:p-2 xl:p-3 2xl:p-4 sm:pb-10 flex flex-col bg-transparent items-center"
       >
         <div className="relative w-full z-10">
-          <div className="rounded-xl p-5 sm:p-6 md:p-8 lg:p-10  sm:pb-20 bg-zinc-500/15 backdrop-blur-lg dark:backdrop-blur-xl dark:bg-black/25 border border-zinc-200 dark:border-zinc-900">
+          <div className="rounded-xl p-5 sm:p-6 md:p-8 lg:p-10  sm:pb-20 bg-blue-500/5 backdrop-blur-lg dark:backdrop-blur-xl dark:bg-black/25 border border-zinc-200 dark:border-zinc-900">
             <div className="text-center mb-6 sm:mb-10">
               <h2 className="text-2xl sm:text-4xl md:text-4xl lg:text-5xl 2xl:text-5xl mt-4 font-bold mb-3 sm:mb-4 md:mb-5 xl:mb-5 text-black dark:text-white">
                 Projects
@@ -66,7 +66,7 @@ const Projects = () => {
                   key={index}
                   className="group relative bg-zinc-100/85 dark:bg-black shadow-2xl 
                           p-6 w-full rounded-xl
-                           duration-300 border border-zinc-400 dark:border-zinc-800 hover:scale-105
+                           duration-300 border  dark:border-zinc-800 hover:scale-105
                           flex flex-col"
                 >
                   <div className="flex-grow">
