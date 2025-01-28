@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { IoIosArrowRoundForward } from "react-icons/io";
 
 const Projects = () => {
   const projects = [
@@ -48,7 +49,7 @@ const Projects = () => {
         className="relative flex-grow p-0 md:p-2 xl:p-3 2xl:p-4 sm:pb-10 flex flex-col bg-transparent items-center"
       >
         <div className="relative w-full z-10">
-          <div className="rounded-xl p-5 sm:p-6 md:p-8 lg:p-10 pb-10 sm:pb-20 bg-zinc-800/5 backdrop-blur-md dark:backdrop-blur-xl dark:bg-zinc-600/25 border border-zinc-200 dark:border-zinc-900">
+          <div className="rounded-xl p-5 sm:p-6 md:p-8 lg:p-10  sm:pb-20 bg-zinc-500/15 backdrop-blur-lg dark:backdrop-blur-xl dark:bg-black/25 border border-zinc-200 dark:border-zinc-900">
             <div className="text-center mb-6 sm:mb-10">
               <h2 className="text-2xl sm:text-4xl md:text-4xl lg:text-5xl 2xl:text-5xl mt-4 font-bold mb-3 sm:mb-4 md:mb-5 xl:mb-5 text-black dark:text-white">
                 Projects
@@ -59,30 +60,35 @@ const Projects = () => {
               </p>
             </div>
 
-            {/* Project Boxes */}
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-6 2xl:gap-8 mb-10 sm:mb-20 md:mb-30 lg:mb-40 xl:mb-52 2xl:mb-52 px-3 sm:px-6 md:px-10">
               {projects.map((project, index) => (
-                <Link
-                  to={project.link}
+                <div
                   key={index}
                   className="group relative bg-zinc-100/85 dark:bg-black shadow-2xl 
-                          p-4 w-full sm:p-5 md:p-7 xl:p-7 2xl:p-10 rounded-xl hover:scale-105 hover:shadow-2xl 
-                           transition-transform duration-300 border border-zinc-300 dark:border-zinc-900"
+                          p-6 w-full rounded-xl
+                           duration-300 border border-zinc-400 dark:border-zinc-800 hover:scale-105
+                          flex flex-col"
                 >
-                  <div>
-                    <h3 className="text-xl sm:text-xl md:text-xl lg:text-2xl xl:text-2xl 2xl:text-3xl text-black font-bold 
-                                mb-2 sm:mb-3 md:mb-4 group-hover:text-purple-400 
-                                dark:group-hover:text-purple-400 dark:text-white transition-colors duration-300">
+                  <div className="flex-grow">
+                    <h3 className="text-xl sm:text-2xl font-bold mb-4 text-black dark:text-white">
                       {project.title}
                     </h3>
-                    <p className="text-sm sm:text-md md:text-lg lg:text-lg xl:text-md 2xl:text-lg font-normal text-zinc-800 
-                               text-pretty group-hover:text-gray-700 dark:text-zinc-300 
-                               dark:group-hover:text-gray-400 transition-colors duration-300 
-                                2xl:mb-3">
+                    <p className="text-sm sm:text-base text-zinc-800 dark:text-zinc-300 mb-6">
                       {project.description}
                     </p>
                   </div>
-                </Link>
+                  <div className="flex justify-end items-center">
+                    <Link
+                      to={project.link}
+                      className="inline-flex items-center gap-2 text-white bg-indigo-700 hover:bg-indigo-800 
+                              font-semibold px-3 py-2 lg:px-4 lg:py-3 rounded-lg 
+                              duration-300 border dark:border-none"
+                    >
+                      <span className="whitespace-nowrap">View Project</span>
+                      <IoIosArrowRoundForward className="w-6 h-6" />
+                    </Link>
+                  </div>
+                </div>
               ))}
             </div>
           </div>
@@ -93,4 +99,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

@@ -123,7 +123,7 @@ const Contact = () => {
         <div className="text-center">
           <button
             type="submit"
-            className="w-full bg-purple-900 hover:bg-purple-800 text-white font-semibold py-2 px-4 rounded-md transition"
+            className="w-full bg-indigo-700 hover:bg-indigo-800 text-white font-semibold py-2 px-4 rounded-md transition"
           >
             Send Message
           </button>
