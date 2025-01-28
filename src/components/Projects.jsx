@@ -51,16 +51,16 @@ const Projects = () => {
         <div className="relative w-full z-10">
           <div className="rounded-xl p-5 sm:p-6 md:p-8 lg:p-10  sm:pb-20 bg-blue-500/5 backdrop-blur-lg dark:backdrop-blur-xl dark:bg-black/25 border border-zinc-200 dark:border-zinc-900">
             <div className="text-center mb-6 sm:mb-10">
-              <h2 className="text-2xl sm:text-4xl md:text-4xl lg:text-5xl 2xl:text-5xl mt-4 font-bold mb-3 sm:mb-4 md:mb-5 xl:mb-5 text-black dark:text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl 2xl:text-4xl mt-4 font-bold mb-3 sm:mb-4 md:mb-5 xl:mb-5 text-black dark:text-white">
                 Projects
               </h2>
-              <p className="text-sm sm:text-base md:text-xl font-semibold max-w-4xl mx-auto lg:text-lg 2xl:text-xl text-zinc-800 dark:text-zinc-300 leading-relaxed px-2">
+              <p className="text-sm sm:text-base md:text-lg font-semibold max-w-4xl mx-auto lg:text-lg 2xl:text-lg text-zinc-800 dark:text-zinc-300 leading-relaxed px-2">
                 Explore some of my most exciting projects showcasing innovative
                 solutions and creativity.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-6 2xl:gap-8 mb-10 sm:mb-20 md:mb-30 lg:mb-40 xl:mb-52 2xl:mb-52 px-3 sm:px-6 md:px-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-6 2xl:gap-8 mb-10 sm:mb-20 md:mb-30 lg:mb-40 xl:mb-50 2xl:mb-60 px-3 sm:px-6 md:px-10">
               {projects.map((project, index) => (
                 <div
                   key={index}
