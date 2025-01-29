@@ -80,9 +80,9 @@ const Projects = () => {
                   <div className="flex justify-end items-center">
                     <Link
                       to={project.link}
-                      className="inline-flex items-center gap-2 text-white bg-indigo-700 hover:bg-indigo-800 
-                              font-semibold px-3 py-2 lg:px-4 lg:py-3 rounded-lg 
-                              duration-300 border dark:border-none"
+                      className="inline-flex items-center gap-2 bg-zinc-950 text-white dark:text-black dark:bg-white dark:hover:bg-zinc-200 
+                              font-semibold px-3 text-sm py-2 xl:px-4 xl:text-base lg:py-3 rounded-lg 
+                              duration-300  dark:border-none"
                     >
                       <span className="whitespace-nowrap">View Project</span>
                       <IoIosArrowRoundForward className="w-6 h-6" />

@@ -1,4 +1,3 @@
-import React from 'react';
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { useEffect } from 'react';
 import 'react-vertical-timeline-component/style.min.css';
@@ -9,7 +8,7 @@ const About = ({ theme }) => {
   }, [])
 
   return (
-    <div className="bg-zinc-100 dark:bg-gradient-to-tr from-zinc-900 to-black min-h-screen flex justify-center">
+    <div className="bg-zinc-100 dark:bg-gradient-to-tl from-zinc-900 to-black min-h-screen flex justify-center">
       {/* Main Container: limits maximum width and manages column layout */}
       <div className="max-w-6xl lg:max-w-8xl xl:max-w-8xl 2xl:max-w-7xl w-full flex flex-col lg:flex-row lg:gap-10 items-start">
         {/* Left Section: About Me */}
