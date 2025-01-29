@@ -60,7 +60,7 @@ const Projects = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-6 2xl:gap-8 mb-10 sm:mb-20 md:mb-30 lg:mb-40 xl:mb-50 2xl:mb-60 px-3 sm:px-6 md:px-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-6 2xl:gap-8 mb-10 sm:mb-20 md:mb-30 lg:mb-40 xl:mb-50 2xl:mb-64 px-3 sm:px-6 md:px-10">
               {projects.map((project, index) => (
                 <div
                   key={index}
@@ -80,7 +80,7 @@ const Projects = () => {
                   <div className="flex justify-end items-center">
                     <Link
                       to={project.link}
-                      className="inline-flex items-center gap-2 bg-zinc-950 text-white dark:text-black dark:bg-white dark:hover:bg-zinc-200 
+                      className="inline-flex items-center gap-2 bg-zinc-950 text-white dark:text-black dark:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-zinc-200 
                               font-semibold px-3 text-sm py-2 xl:px-4 xl:text-base lg:py-3 rounded-lg 
                               duration-300  dark:border-none"
                     >
