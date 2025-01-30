@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { IoIosArrowRoundForward } from "react-icons/io";
+import { FaGithub } from 'react-icons/fa';
 
 const Projects = () => {
   const projects = [
@@ -9,12 +10,14 @@ const Projects = () => {
       description:
         'Full-stack project that allows teams to efficiently manage their members and projects. It can read, update, delete, and display information about each of the members and projects.',
       link: '/projects/member-management-dashboard',
+      githubLink: 'https://github.com/joshyt100/Full-Stack-Member-Management-System',
     },
     {
       title: 'SideQuest',
       description:
         'A location-based mobile app that curates personalized quests, guiding users to unique experiences nearby. By connecting people to similar destinations, SideQuest fosters shared adventures and memorable discoveries. (Ongoing Development)',
       link: '/projects/sidequest',
+      githubLink: 'https://joshyt.vercel.app/projects/sidequest',
     },
     {
       title: 'Vim Motion Snake Game',
@@ -27,18 +30,21 @@ const Projects = () => {
       description:
         'An interactive animation project featuring Harold, Sparty, and two custom-built machines. Use the characters and machines together to create fully customizable animations, control machine timing, and bring your scenes to life with precision and creativity.',
       link: '/projects/canadian-experience',
+      githubLink: 'https://github.com/joshyt100/Vim-Motion-Snake-Game',
     },
     {
       title: 'Dotfiles',
       description:
         'A collection of custom configurations designed to optimize the development workflow, featuring tools like Neovim, Alacritty, Starship, and AeroSpace.',
       link: '/projects/dot-files',
+      githubLink: 'https://github.com/joshyt100/dotfiles',
     },
     {
       title: 'Multi-Threaded Purchase Order System',
       description:
         'A C++ application simulating inventory and order management with multi-threading. This project demonstrates the use of POSIX threads for efficient and concurrent processing of customer orders and inventory updates.',
       link: '/projects/purchase-order-system',
+      githubLink: 'https://github.com/joshyt100/Multi-threaded-Purchase-Order-System',
     },
   ];
 
@@ -70,9 +76,20 @@ const Projects = () => {
                           flex flex-col"
                 >
                   <div className="flex-grow">
-                    <h3 className="text-xl sm:text-2xl font-bold mb-4 text-black dark:text-white">
-                      {project.title}
-                    </h3>
+                    <div className="flex justify-between items-start mb-4"> {/* Changed from items-center to items-start */}
+                      <h3 className="text-xl sm:text-2xl font-bold pr-4  text-black dark:text-white">
+                        {project.title}
+                      </h3>
+
+                      <a
+                        className="text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-400 transition duration-150"
+                        href={project.githubLink}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <FaGithub className="h-6 w-6 lg:h-7 lg:w-7" />
+                      </a>
+                    </div>
                     <p className="text-sm sm:text-base text-zinc-800 dark:text-zinc-300 mb-6">
                       {project.description}
                     </p>
@@ -99,3 +116,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
