@@ -37,7 +37,7 @@ function App() {
       if (hash === '#projects') {
         const projectsSection = document.getElementById('projects');
         if (projectsSection) {
-          window.scrollTo(0, projectsSection.offsetTop + 100); //instantly jump to projects
+          window.scrollTo(0, projectsSection.offsetTop); //instantly jump to projects
         }
       } else {
         window.scrollTo(0, 0);
