@@ -84,7 +84,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             href="https://www.linkedin.com/in/joshua-thomas-7548b4294/"
             target="_blank"
             rel="noopener noreferrer"
-            className="hover:text-gray-700 dark:hover:text-gray-300 text-sky-600 transition opacity-80"
+            className="hover:text-sky-700 dark:hover:text-sky-700 text-sky-600 transition opacity-80"
             aria-label="LinkedIn"
           >
             <FaLinkedin className="h-6 w-6 sm:h-7 sm:w-7" />
