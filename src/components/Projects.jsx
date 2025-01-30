@@ -24,6 +24,7 @@ const Projects = () => {
       description:
         "A modern take on the classic Snake game, featuring Vim-style motion controls (h, j, k, l) for navigation. Designed to enhance your Vim muscle memory while providing a fun and interactive gaming experience.",
       link: '/projects/snake-game',
+      githubLink: 'https://github.com/joshyt100/Vim-Motion-Snake-Game',
     },
     {
       title: 'Canadian Experience',
