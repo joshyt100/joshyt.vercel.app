@@ -1,6 +1,8 @@
 import React from 'react';
-import { FaArrowLeft, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
+import { LuLinkedin } from "react-icons/lu";
 import { HashLink } from 'react-router-hash-link';
+import { RiGithubLine } from "react-icons/ri";
 
 const ProjectNavbar = () => {
   return (
@@ -24,16 +26,16 @@ const ProjectNavbar = () => {
               className="hover:text-gray-700 dark:hover:text-gray-300 text-black dark:text-white transition opacity-80"
               aria-label="GitHub"
             >
-              <FaGithub className="h-6 w-6" />
+              <RiGithubLine className="h-6 w-6" />
             </a>
             <a
               href="https://www.linkedin.com/in/joshua-thomas-7548b4294/"
               target="_blank"
               rel="noopener noreferrer"
-              className="hover:text-gray-700 dark:hover:text-gray-300 text-sky-600 transition opacity-80"
+              className="hover:text-gray-700 dark:hover:text-sky-700 text-sky-600 transition opacity-80"
               aria-label="LinkedIn"
             >
-              <FaLinkedin className="h-6 w-6" />
+              <LuLinkedin className="h-7 w-7" />
             </a>
           </div>
         </div>

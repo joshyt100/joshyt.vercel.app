@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaMoon, FaSun, FaBars, FaTimes } from 'react-icons/fa';
+import { RiGithubLine } from "react-icons/ri";
+import { LuLinkedin } from "react-icons/lu";
 
 const Navbar = ({ theme, toggleTheme }) => {
   const navigate = useNavigate();
@@ -76,7 +78,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             className="hover:text-gray-700 dark:hover:text-gray-300 text-black dark:text-white transition opacity-80"
             aria-label="GitHub"
           >
-            <FaGithub className="sm:h-7 sm:w-7 h-6 w-6" />
+            <RiGithubLine className="sm:h-7 sm:w-7 h-6 w-6" />
           </a>
 
           {/* LinkedIn Link */}
@@ -87,7 +89,7 @@ const Navbar = ({ theme, toggleTheme }) => {
             className="hover:text-sky-700 dark:hover:text-sky-700 text-sky-600 transition opacity-80"
             aria-label="LinkedIn"
           >
-            <FaLinkedin className="h-6 w-6 sm:h-7 sm:w-7" />
+            <LuLinkedin className="h-6 w-6 sm:h-7 sm:w-7" />
           </a>
 
           {/* Theme Toggle */}
