@@ -98,12 +98,12 @@ const Projects = () => {
                   <div className="flex justify-end items-center">
                     <Link
                       to={project.link}
-                      className="inline-flex items-center gap-2 bg-zinc-950 text-white dark:text-black dark:bg-zinc-100 hover:bg-zinc-800 dark:hover:bg-zinc-200 
-                              font-semibold px-3 text-sm py-2 xl:px-4 xl:text-base lg:py-3 rounded-lg 
-                              duration-300  dark:border-none"
+                      className="inline-flex items-center gap-2 text-white dark:text-black  hover:text-indigo-500 dark:hover:text-indigo-500 border border-transparent hover:border-indigo-500 
+                              font-semibold px-3 text-md py-2 xl:px-4 xl:text-base lg:py-3 rounded-lg 
+                              duration-300"
                     >
-                      <span className="whitespace-nowrap">View Project</span>
-                      <IoIosArrowRoundForward className="w-6 h-6" />
+                      <span className="whitespace-nowrap text-indigo-700">View Project</span>
+                      <IoIosArrowRoundForward className="w-7 h-7 text-indigo-700" />
                     </Link>
                   </div>
                 </div>
@@ -117,4 +117,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
