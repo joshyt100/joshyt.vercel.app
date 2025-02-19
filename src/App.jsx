@@ -15,7 +15,7 @@ import DotFiles from './projects-mdx/dot_files.mdx';
 import CanadianExperience from './projects-mdx/canadian-experience.mdx';
 import PurchaseOrderSystem from './projects-mdx/purchase-order-system.mdx';
 function App() {
-  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+  const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
   const location = useLocation();
 
   useEffect(() => {

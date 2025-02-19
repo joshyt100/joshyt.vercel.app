@@ -22,6 +22,9 @@ export default {
       backgroundImage: {
         gradient: 'linear-gradient(90deg, #3498db, #9b59b6, #e74c3c, #f1c40f, #2ecc71, #3498db)',
       },
+      fontFamily: {
+        display: ["Krona One", "sans-serif"],
+      }
     },
   },
   plugins: [],

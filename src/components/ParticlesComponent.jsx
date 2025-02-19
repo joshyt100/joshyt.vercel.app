@@ -8,7 +8,6 @@ const ParticlesComponent = ({ id, theme }) => {
   // Initialize the tsParticles engine
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // Load the required engine features
       await loadSlim(engine); // Using the slim version for smaller bundle size
     }).then(() => {
       setInit(true);
@@ -59,10 +58,10 @@ const ParticlesComponent = ({ id, theme }) => {
       },
       particles: {
         color: {
-          value: theme === "dark" ? "#5D3FD3" : "#5D3FD3", // Particle Color
+          value: theme === "dark" ? "#71717A" : "#A1A1AA", // Particle Color
         },
         links: {
-          color: theme === "dark" ? "#FFFFFF" : "#000000", // Lin 0284c7 ewcolor adapts to theme
+          color: theme === "dark" ? "#6366F1" : "#3730A3", // Lin 0284c7 ewcolor adapts to theme
           distance: 150,
           enable: true,
           opacity: 1,
