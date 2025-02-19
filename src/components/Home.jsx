@@ -93,7 +93,7 @@ const Home = () => {
           : 'opacity-0 transform translate-y-4'
           }`}
       >
-        <p className="text-sm sm:text-md md:text-md lg:text-md 2xl:text-lg font-nm text-black dark:text-white">
+        <p className="text-sm sm:text-md md:text-base xl:text-[1.075rem] 2xl:text-lg font-nm text-black dark:text-white">
           Built with React.js, Vite, TailwindCSS, and MDX
         </p>
       </div>
