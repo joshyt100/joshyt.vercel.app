@@ -59,7 +59,7 @@ const Home = () => {
           }}
         >
           <motion.h1
-            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] 2xl:text-8xl font-black font-display bg-clip-text text-zinc-900 dark:text-white"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-[5.5rem] 2xl:text-8xl font-black font-display bg-clip-text text-zinc-900 dark:text-white"
             variants={{
               hidden: { scale: 0.8, opacity: 0 },
               visible: { scale: 1, opacity: 0.85 },

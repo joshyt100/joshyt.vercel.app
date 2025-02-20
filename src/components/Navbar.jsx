@@ -27,7 +27,7 @@ const Navbar = ({ theme, toggleTheme }) => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full sm:h-16 2xl:h-18 bg-transparent  border-gray-500/10 backdrop-blur-xl text-black dark:text-white z-20 flex items-center">
+    <nav className="fixed top-0 left-0 w-full h-12 sm:h-16 2xl:h-18 bg-transparent  border-gray-500/10 backdrop-blur-xl text-black dark:text-white z-20 flex items-center">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between w-full h-full">
         <button
           onClick={() => setMenuOpen(!menuOpen)}
@@ -90,8 +90,6 @@ const Navbar = ({ theme, toggleTheme }) => {
           >
             <LuLinkedin className="h-6 w-6 sm:h-7 sm:w-7" />
           </a>
-
-          {/* Theme Toggle */}
           <div className="flex items-center space-x-2">
             <FaSun className={`text-yellow-500 ${theme === 'light' ? 'opacity-100' : 'opacity-50'}`} />
             <label className="relative inline-flex items-center cursor-pointer">
@@ -101,15 +99,19 @@ const Navbar = ({ theme, toggleTheme }) => {
                 onChange={toggleTheme}
                 className="sr-only peer"
               />
-              <div className="w-14 h-7 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-gray-500 rounded-full peer dark:bg-gray-600 dark:peer-checked:bg-yellow-600 transition-all duration-300">
+              <div className="w-14 h-7 bg-gray-300 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-gray-500 rounded-full dark:bg-gray-600 dark:peer-checked:bg-yellow-600 transition-all duration-300">
                 <div
-                  className={`absolute w-6 h-6 bg-white rounded-full shadow-md transform transition-transform duration-300 ${theme === 'dark' ? 'translate-x-7' : ''
+                  className={`absolute top-1/2 left-0 transform -translate-y-1/2 transition-transform duration-300 w-6 h-6 bg-white rounded-full shadow-md ${theme === 'dark' ? 'translate-x-7' : ''
                     }`}
                 />
               </div>
             </label>
             <FaMoon className={`text-gray-800 dark:text-yellow-400 ${theme === 'dark' ? 'opacity-100' : 'opacity-50'}`} />
           </div>
+
+
+
+
         </div>
       </div>
 
