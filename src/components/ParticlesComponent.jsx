@@ -102,4 +102,3 @@ const ParticlesComponent = ({ id, theme }) => {
 };
 
 export default ParticlesComponent;
-

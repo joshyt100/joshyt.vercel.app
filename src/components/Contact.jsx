@@ -61,7 +61,7 @@ const Contact = () => {
       <form
         ref={formRef}
         onSubmit={sendEmail}
-        className="w-full max-w-2xl bg-white dark:bg-black border dark:border-none  z-20 p-6 rounded-lg shadow-2xl space-y-4  border-zinc-100"
+        className="w-full sm:max-w-2xl bg-white dark:bg-black border dark:border-none  z-20 py-6 px-6 rounded-lg shadow-2xl space-y-4  border-zinc-100"
       >
         <div className="grid grid-cols-1 gap-4">
           <div>

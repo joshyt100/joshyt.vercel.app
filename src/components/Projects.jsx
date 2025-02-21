@@ -56,7 +56,7 @@ const Projects = () => {
         className="relative flex-grow p-0 md:p-2 xl:p-3 2xl:p-4 sm:pb-10 flex flex-col bg-transparent items-center"
       >
         <div className="relative w-full z-10">
-          <div className="rounded-xl p-5 sm:p-6 md:p-8 lg:p-10  sm:pb-20 bg-blue-500/5 backdrop-blur-lg  dark:bg-black/20 dark:backdrop-blur-lg border border-zinc-200 dark:border-zinc-900">
+          <div className="rounded-xl  sm:p-6 md:p-8 lg:p-10  sm:pb-20 bg-blue-500/5 backdrop-blur-lg  dark:bg-black/20 dark:backdrop-blur-lg border border-zinc-200 dark:border-zinc-900">
             <div className="text-center mb-6 sm:mb-10">
               <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl 2xl:text-4xl mt-4 font-bold mb-3 sm:mb-4 md:mb-5 xl:mb-5 text-black dark:text-white">
                 Projects
@@ -67,7 +67,7 @@ const Projects = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-3 sm:gap-4 md:gap-6 lg:gap-6 2xl:gap-8 mb-10 sm:mb-20 md:mb-30 lg:mb-40 xl:mb-50 2xl:mb-64 px-3 sm:px-6 md:px-10">
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-y-4  sm:gap-4 md:gap-6 lg:gap-6 2xl:gap-8 mb-10 sm:mb-20 md:mb-30 lg:mb-40 xl:mb-50 2xl:mb-64 px-3 sm:px-6 md:px-10">
               {projects.map((project, index) => (
                 <div
                   key={index}
