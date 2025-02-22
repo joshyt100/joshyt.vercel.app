@@ -14,6 +14,7 @@ import MemberManagementDashboard from './projects-mdx/member-management-dashboar
 import DotFiles from './projects-mdx/dot_files.mdx';
 import CanadianExperience from './projects-mdx/canadian-experience.mdx';
 import PurchaseOrderSystem from './projects-mdx/purchase-order-system.mdx';
+import { Analytics } from '@vercel/analytics/react';
 function App() {
   const [theme, setTheme] = useState(localStorage.getItem('theme') || 'dark');
   const location = useLocation();
@@ -55,6 +56,7 @@ function App() {
 
   return (
     <div className={`app-container ${theme}`}>
+      <Analytics />
       {isProjectDetailPage ? (
         <ProjectNavbar />
       ) : (
