@@ -37,14 +37,14 @@ const ParticlesComponent = ({ id, theme }) => {
             mode: "grab",
           },
         },
-        responsive: [{
-          maxWidth: 500,
-          options: {
-            particles: {
-              number: 0,
-            },
-          }
-        }],
+        //responsive: [{
+        //  maxWidth: 500,
+        //  options: {
+        //    particles: {
+        //      number: 0,
+        //    },
+        //  }
+        //}],
 
         modes: {
           push: {

@@ -73,7 +73,7 @@ const Projects = () => {
                   key={index}
                   className="group relative bg-zinc-100/85 dark:bg-black shadow-2xl 
                           p-6 w-full rounded-xl
-                           duration-300 border  dark:border-zinc-800 hover:scale-105
+                           duration-300 border  dark:border-zinc-800 hover:none sm:hover:scale-105
                           flex flex-col"
                 >
                   <div className="flex-grow">
