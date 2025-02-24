@@ -1,5 +1,5 @@
 import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, useCallback } from "react";
 import { loadSlim } from "@tsparticles/slim";
 
 const ParticlesComponent = ({ id, theme }) => {
@@ -13,9 +13,18 @@ const ParticlesComponent = ({ id, theme }) => {
       if (window.innerWidth <= 768) {
         setIsMobile(true);
       }
+      else {
+        setIsMobile(false);
+      }
     }
 
     checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => {
+      window.removeEventListener('resize', checkMobile);
+    }
+
 
   }, []);
 
@@ -28,9 +37,9 @@ const ParticlesComponent = ({ id, theme }) => {
     });
   }, []);
 
-  const particlesLoaded = (container) => {
+  const particlesLoaded = useCallback(async (container) => {
     console.log(container);
-  };
+  }, []);
 
   const options = useMemo(
     () => ({
@@ -65,7 +74,7 @@ const ParticlesComponent = ({ id, theme }) => {
             mode: "repulse",
           },
           onHover: {
-            enable: true,
+            enable: !isMobile,
             mode: "grab",
           },
         },
@@ -118,10 +127,22 @@ const ParticlesComponent = ({ id, theme }) => {
         },
       },
     }),
-    [theme] // Recalculate options when theme changes
+    [theme, isMobile] // Recalculate options when theme changes
   );
 
-  return <Particles id={id} init={particlesLoaded} options={options} />;
+  if (!init) {
+    return null;
+  }
+  return (
+    <div className="fixed inset-0 -z-10">
+      <Particles
+        id={id}
+        init={particlesLoaded}
+        options={options}
+        className="absolute inset-0"
+      />
+    </div>
+  );
 };
 
 export default ParticlesComponent;

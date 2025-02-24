@@ -68,9 +68,9 @@ function App() {
           path="/"
           element={
             <>
-              <div className="absolute top-0 left-0 w-full h-screen z-0">
-                <ParticlesComponent theme={theme} />
-              </div>
+              {/*<div className="absolute top-0 left-0 w-full h-screen z-0"> */}
+              <ParticlesComponent theme={theme} />
+              {/*}</div> */}
               <main className="relative z-10">
                 <Home />
                 <div id="projects" className="relative scroll-mt-11 sm:scroll-mt-6 md:scroll-mt-6   2xl:scroll-mt-6">
