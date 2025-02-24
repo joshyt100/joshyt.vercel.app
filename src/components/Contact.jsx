@@ -49,7 +49,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-zinc-100 dark:bg-gradient-to-tl from-zinc-900 to-black text-white flex flex-col items-center justify-center sm:p-8 "
+      className="min-h-screen bg-zinc-100 dark:bg-black text-white flex flex-col items-center justify-center sm:p-8 "
 
     >
 
