@@ -4,6 +4,20 @@ import { loadSlim } from "@tsparticles/slim";
 
 const ParticlesComponent = ({ id, theme }) => {
   const [init, setInit] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+
+
+  useEffect(() => {
+    const checkMobile = () => {
+      if (window.innerWidth <= 768) {
+        setIsMobile(true);
+      }
+    }
+
+    checkMobile();
+
+  }, []);
 
   // Initialize the tsParticles engine
   useEffect(() => {
@@ -25,7 +39,7 @@ const ParticlesComponent = ({ id, theme }) => {
           value: theme === "dark" ? "#000000" : "#ECECEE", // Dynamically set background color based on theme
         },
       },
-      fpsLimit: 120,
+      fpsLimit: isMobile ? 30 : 120,
       detectRetina: true,
       responsive: [{
         maxWidth: 500,
@@ -37,6 +51,9 @@ const ParticlesComponent = ({ id, theme }) => {
                 enable: true, height: 375, width: 725
               },
             },
+            move: {
+              speed: 0.6,
+            }
 
           },
         }
