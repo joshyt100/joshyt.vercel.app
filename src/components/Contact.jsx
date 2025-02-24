@@ -49,7 +49,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-zinc-100 dark:bg-black text-white flex flex-col items-center justify-center sm:p-8 "
+      className="min-h-screen bg-zinc-100 dark:bg-black text-white flex flex-col items-center justify-center   sm:p-8 "
 
     >
 
@@ -61,7 +61,7 @@ const Contact = () => {
       <form
         ref={formRef}
         onSubmit={sendEmail}
-        className="w-full max-w-full sm:max-w-2xl bg-white dark:bg-black border dark:border-none  z-20 py-6 px-6 rounded-lg shadow-2xl space-y-4  border-zinc-100"
+        className="w-full max-w-full sm:max-w-2xl bg-white dark:bg-black border dark:border-zinc-800  z-20 py-6 px-6 rounded-lg shadow-2xl space-y-4  border-zinc-100"
       >
         <div className="grid grid-cols-1 gap-4">
           <div>
