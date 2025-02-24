@@ -26,6 +26,21 @@ const ParticlesComponent = ({ id, theme }) => {
         },
       },
       fpsLimit: 120,
+      detectRetina: true,
+      responsive: [{
+        maxWidth: 500,
+        options: {
+          particles: {
+            number: {
+              value: 50,
+              density: {
+                enable: true, height: 375, width: 725
+              },
+            },
+
+          },
+        }
+      }],
       interactivity: {
         events: {
           onClick: {
@@ -37,14 +52,6 @@ const ParticlesComponent = ({ id, theme }) => {
             mode: "grab",
           },
         },
-        //responsive: [{
-        //  maxWidth: 500,
-        //  options: {
-        //    particles: {
-        //      number: 0,
-        //    },
-        //  }
-        //}],
 
         modes: {
           push: {
@@ -93,7 +100,6 @@ const ParticlesComponent = ({ id, theme }) => {
           value: { min: 2, max: 3 },
         },
       },
-      detectRetina: true,
     }),
     [theme] // Recalculate options when theme changes
   );
