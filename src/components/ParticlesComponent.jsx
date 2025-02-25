@@ -6,40 +6,46 @@ const ParticlesComponent = ({ id, theme }) => {
   const [init, setInit] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
 
+  const particlesLoaded = (container) => {
+    console.log(container);
+  }
+
 
 
   useEffect(() => {
+    let timeoutId;
     const checkMobile = () => {
-      if (window.innerWidth <= 768) {
-        setIsMobile(true);
-      }
-      else {
-        setIsMobile(false);
-      }
-    }
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        if (window.innerWidth <= 768) {
+          setIsMobile(true);
+        }
+        else {
+          setIsMobile(false);
+        }
+
+      }, 150);
+    };
 
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
     return () => {
+      clearTimeout(timeoutId);
       window.removeEventListener('resize', checkMobile);
     }
 
 
   }, []);
 
-  // Initialize the tsParticles engine
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      await loadSlim(engine); // Using the slim version for smaller bundle size
+      await loadSlim(engine);
     }).then(() => {
       setInit(true);
     });
   }, []);
 
-  const particlesLoaded = useCallback(async (container) => {
-    console.log(container);
-  }, []);
 
   const options = useMemo(
     () => ({
@@ -55,9 +61,9 @@ const ParticlesComponent = ({ id, theme }) => {
         options: {
           particles: {
             number: {
-              value: 50,
+              value: 60,
               density: {
-                enable: true, height: 375, width: 725
+                enable: false,
               },
             },
             move: {
@@ -91,7 +97,7 @@ const ParticlesComponent = ({ id, theme }) => {
       },
       particles: {
         color: {
-          value: theme === "dark" ? "#71717A" : "#A1A1AA", // Particle Color
+          value: theme === "dark" ? "#71717A" : "#A1A1AA",
         },
         links: {
           color: theme === "dark" ? "#6366F1" : "#3730A3", // Lin 0284c7 ewcolor adapts to theme
@@ -127,22 +133,24 @@ const ParticlesComponent = ({ id, theme }) => {
         },
       },
     }),
-    [theme, isMobile] // Recalculate options when theme changes
-  );
+    [theme, isMobile]);
 
-  if (!init) {
-    return null;
+  if (init) {
+
+    return (
+      <div className="fixed inset-0 -z-10">
+        <Particles
+          id={'tsparticles'}
+          init={particlesLoaded}
+          options={options}
+          className="absolute inset-0"
+        />
+      </div>
+    );
   }
-  return (
-    <div className="fixed inset-0 -z-10">
-      <Particles
-        id={id}
-        init={particlesLoaded}
-        options={options}
-        className="absolute inset-0"
-      />
-    </div>
-  );
+  else {
+    return <></>
+  }
 };
 
 export default ParticlesComponent;
