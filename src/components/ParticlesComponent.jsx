@@ -61,7 +61,7 @@ const ParticlesComponent = ({ id, theme }) => {
         options: {
           particles: {
             number: {
-              value: 50,
+              value: 20,
               density: {
                 enable: false,
               },
