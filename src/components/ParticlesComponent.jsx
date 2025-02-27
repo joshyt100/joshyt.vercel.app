@@ -12,31 +12,28 @@ const ParticlesComponent = ({ id, theme }) => {
 
 
 
-  useEffect(() => {
-    let timeoutId;
-    const checkMobile = () => {
-      clearTimeout(timeoutId);
-      timeoutId = setTimeout(() => {
-        if (window.innerWidth <= 768) {
-          setIsMobile(true);
-        }
-        else {
-          setIsMobile(false);
-        }
-
-      }, 150);
-    };
-
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-
-    return () => {
-      clearTimeout(timeoutId);
-      window.removeEventListener('resize', checkMobile);
-    }
-
-
-  }, []);
+  //useEffect(() => {
+  //  let timeoutId;
+  //  const checkMobile = () => {
+  //    if (window.innerWidth <= 768) {
+  //      setIsMobile(true);
+  //    }
+  //    else {
+  //      setIsMobile(false);
+  //    }
+  //
+  //  }
+  //
+  //  checkMobile();
+  //  window.addEventListener('resize', checkMobile);
+  //
+  //  return () => {
+  //    clearTimeout(timeoutId);
+  //    window.removeEventListener('resize', checkMobile);
+  //  }
+  //
+  //
+  //}, []);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -54,7 +51,7 @@ const ParticlesComponent = ({ id, theme }) => {
           value: theme === "dark" ? "#000000" : "#ECECEE", // Dynamically set background color based on theme
         },
       },
-      fpsLimit: isMobile ? 30 : 120,
+      fpsLimit: 120,
       detectRetina: true,
       responsive: [{
         maxWidth: 500,
@@ -80,7 +77,7 @@ const ParticlesComponent = ({ id, theme }) => {
             mode: "repulse",
           },
           onHover: {
-            enable: !isMobile,
+            enable: false,
             mode: "grab",
           },
         },
@@ -133,7 +130,7 @@ const ParticlesComponent = ({ id, theme }) => {
         },
       },
     }),
-    [theme, isMobile]);
+  );
 
   if (init) {
 
