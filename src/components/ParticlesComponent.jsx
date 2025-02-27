@@ -138,14 +138,13 @@ const ParticlesComponent = ({ id, theme }) => {
   if (init) {
 
     return (
-      <div className="fixed inset-0 -z-10">
-        <Particles
+      <div >
+        < Particles
           id={'tsparticles'}
           init={particlesLoaded}
           options={options}
-          className="absolute inset-0"
         />
-      </div>
+      </div >
     );
   }
   else {
