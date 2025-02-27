@@ -12,28 +12,31 @@ const ParticlesComponent = ({ id, theme }) => {
 
 
 
-  //useEffect(() => {
-  //  let timeoutId;
-  //  const checkMobile = () => {
-  //    if (window.innerWidth <= 768) {
-  //      setIsMobile(true);
-  //    }
-  //    else {
-  //      setIsMobile(false);
-  //    }
-  //
-  //  }
-  //
-  //  checkMobile();
-  //  window.addEventListener('resize', checkMobile);
-  //
-  //  return () => {
-  //    clearTimeout(timeoutId);
-  //    window.removeEventListener('resize', checkMobile);
-  //  }
-  //
-  //
-  //}, []);
+  useEffect(() => {
+    let timeoutId;
+    const checkMobile = () => {
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        if (window.innerWidth <= 768) {
+          setIsMobile(true);
+        }
+        else {
+          setIsMobile(false);
+        }
+
+      }, 150);
+    };
+
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('resize', checkMobile);
+    }
+
+
+  }, []);
 
   useEffect(() => {
     initParticlesEngine(async (engine) => {
@@ -48,10 +51,10 @@ const ParticlesComponent = ({ id, theme }) => {
     () => ({
       background: {
         color: {
-          value: "#000000", // Dynamically set background color based on theme
+          value: theme === "dark" ? "#000000" : "#ECECEE", // Dynamically set background color based on theme
         },
       },
-      fpsLimit: 120,
+      fpsLimit: isMobile ? 30 : 120,
       detectRetina: true,
       responsive: [{
         maxWidth: 500,
@@ -77,7 +80,7 @@ const ParticlesComponent = ({ id, theme }) => {
             mode: "repulse",
           },
           onHover: {
-            enable: false,
+            enable: !isMobile,
             mode: "grab",
           },
         },
@@ -94,10 +97,10 @@ const ParticlesComponent = ({ id, theme }) => {
       },
       particles: {
         color: {
-          value: "#000000",
+          value: theme === "dark" ? "#71717A" : "#A1A1AA",
         },
         links: {
-          color: "#6366F1", // Lin 0284c7 ewcolor adapts to theme
+          color: theme === "dark" ? "#6366F1" : "#3730A3", // Lin 0284c7 ewcolor adapts to theme
           distance: 150,
           enable: true,
           opacity: 1,
@@ -130,7 +133,7 @@ const ParticlesComponent = ({ id, theme }) => {
         },
       },
     }),
-  );
+    [theme, isMobile]);
 
   if (init) {
 
@@ -150,3 +153,4 @@ const ParticlesComponent = ({ id, theme }) => {
 };
 
 export default ParticlesComponent;
+
