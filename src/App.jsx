@@ -25,26 +25,26 @@ function App() {
     localStorage.setItem('theme', theme);
   }, [theme]);
 
-  //useEffect(() => {
-  //  if ('scrollRestoration' in window.history) {
-  //    window.history.scrollRestoration = 'manual';
-  //  }
-  //  const isPageReload = performance.getEntriesByType('navigation').some(
-  //    (nav) => nav.type === 'reload'
-  //  );
-  //
-  //  if (!isPageReload && location.pathname === '/') {
-  //    const hash = location.hash || '';
-  //    if (hash === '#projects') {
-  //      const projectsSection = document.getElementById('projects');
-  //      if (projectsSection) {
-  //        window.scrollTo(0, projectsSection.offsetTop); //instantly jump to projects
-  //      }
-  //    } else {
-  //      window.scrollTo(0, 0);
-  //    }
-  //  }
-  //}, [location]);
+  useEffect(() => {
+    if ('scrollRestoration' in window.history) {
+      window.history.scrollRestoration = 'manual';
+    }
+    const isPageReload = performance.getEntriesByType('navigation').some(
+      (nav) => nav.type === 'reload'
+    );
+
+    if (!isPageReload && location.pathname === '/') {
+      const hash = location.hash || '';
+      if (hash === '#projects') {
+        const projectsSection = document.getElementById('projects');
+        if (projectsSection) {
+          window.scrollTo(0, projectsSection.offsetTop); //instantly jump to projects
+        }
+      } else {
+        window.scrollTo(0, 0);
+      }
+    }
+  }, [location]);
 
   const toggleTheme = () => {
     setTheme((prevTheme) => (prevTheme === 'light' ? 'dark' : 'light'));

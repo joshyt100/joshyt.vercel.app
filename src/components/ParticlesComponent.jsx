@@ -17,21 +17,14 @@ const ParticlesComponent = ({ id, theme }) => {
     const checkMobile = () => {
       clearTimeout(timeoutId);
       timeoutId = setTimeout(() => {
-        if (window.innerWidth <= 768) {
-          setIsMobile(true);
-        }
-        else {
-          setIsMobile(false);
-        }
 
-      }, 150);
-    };
+      })
+    }
 
     checkMobile();
     window.addEventListener('resize', checkMobile);
 
     return () => {
-      clearTimeout(timeoutId);
       window.removeEventListener('resize', checkMobile);
     }
 
@@ -61,7 +54,7 @@ const ParticlesComponent = ({ id, theme }) => {
         options: {
           particles: {
             number: {
-              value: 50,
+              value: 60,
               density: {
                 enable: false,
               },
@@ -138,13 +131,14 @@ const ParticlesComponent = ({ id, theme }) => {
   if (init) {
 
     return (
-      <div >
-        < Particles
+      <div className="fixed inset-0 -z-10">
+        <Particles
           id={'tsparticles'}
           init={particlesLoaded}
           options={options}
+          className="absolute inset-0"
         />
-      </div >
+      </div>
     );
   }
   else {
@@ -153,4 +147,3 @@ const ParticlesComponent = ({ id, theme }) => {
 };
 
 export default ParticlesComponent;
-
