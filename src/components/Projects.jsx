@@ -31,7 +31,7 @@ const Projects = () => {
       description:
         'An interactive animation project featuring Harold, Sparty, and two custom-built machines. Use the characters and machines together to create fully customizable animations, control machine timing, and bring your scenes to life with precision and creativity.',
       link: '/projects/canadian-experience',
-      githubLink: 'https://github.com/joshyt100/Vim-Motion-Snake-Game',
+      githubLink: 'https://github.com/joshyt100/sparty-in-a-box',
     },
     {
       title: 'Dotfiles',
