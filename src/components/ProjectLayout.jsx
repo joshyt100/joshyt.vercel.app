@@ -10,7 +10,7 @@ const ProjectLayout = ({ title, description, techStack = [], features = [], gith
   return (
     <div className="min-h-screen bg-zinc-100 dark:bg-zinc-950 dark:text-white px-6 sm:px-10 py-6 overflow-hidden">
       <header className="mb-8">
-        <h1 className="text-3xl sm:text-4xl text-center font-bold mt-20 mb-3 tracking-tight">
+        <h1 className="text-3xl sm:text-4xl text-center font-semibold mt-20 mb-3 tracking-tight">
           {title}
         </h1>
         <p className="text-base sm:text-lg text-center text-gray-700 dark:text-gray-300 mb-4 leading-relaxed max-w-2xl mx-auto">

@@ -53,7 +53,7 @@ const Contact = () => {
 
     >
 
-      <h2 className="text-4xl  font-bold mb-6 mt-12 text-center text-black dark:text-white">Get in Touch</h2>
+      <h2 className="text-4xl  font-semibold mb-6 mt-12 text-center text-black dark:text-white">Get in Touch</h2>
       <p className="text-lg text-black dark:text-white mb-8">
         Feel free to reach out for work opportunites, collaborations, or just a friendly chat!
       </p>
@@ -123,7 +123,7 @@ const Contact = () => {
         <div className="text-center">
           <button
             type="submit"
-            className="w-full bg-black text-white dark:bg-zinc-100 dark:text-black   font-semibold py-2 px-4 rounded-lg hover:bg-zinc-700 dark:hover:bg-zinc-200"
+            className="w-full bg-black text-white dark:bg-zinc-100 dark:text-black   font-medium py-2 px-4 rounded-lg hover:bg-zinc-700 dark:hover:bg-zinc-200"
           >
             Send Message
           </button>

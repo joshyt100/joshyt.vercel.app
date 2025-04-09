@@ -58,10 +58,10 @@ const Projects = () => {
         <div className="relative w-full z-10">
           <div className="rounded-xl  sm:p-6 md:p-8 lg:p-10  sm:pb-20 bg-blue-500/5 backdrop-blur-lg  dark:bg-black/20 dark:backdrop-blur-lg border border-zinc-200 dark:border-zinc-900">
             <div className="text-center mb-6 sm:mb-10">
-              <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl 2xl:text-4xl mt-4 font-bold mb-3 sm:mb-4 md:mb-5 xl:mb-5  text-black dark:text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl 2xl:text-[2.3rem] mt-4 font-semibold mb-3 sm:mb-4 md:mb-5 xl:mb-5  text-black dark:text-white">
                 Projects
               </h2>
-              <p className="text-sm sm:text-base md:text-lg font-semibold max-w-4xl mx-auto lg:text-lg 2xl:text-lg text-zinc-800 dark:text-zinc-300 leading-relaxed px-2">
+              <p className="text-sm sm:text-base md:text-lg font-medium max-w-4xl mx-auto lg:text-lg 2xl:text-lg text-zinc-800 dark:text-zinc-300 leading-relaxed px-2">
                 Explore some of my most exciting projects showcasing innovative
                 solutions and creativity.
               </p>
@@ -77,7 +77,7 @@ const Projects = () => {
                 >
                   <div className="flex-grow">
                     <div className="flex justify-between items-start mb-4"> {/* Changed from items-center to items-start */}
-                      <h3 className="text-xl sm:text-2xl  font-bold pr-4  text-black dark:text-white">
+                      <h3 className="text-xl sm:text-2xl lg:text-[1.55rem]  font-semibold pr-4  text-black dark:text-white">
                         {project.title}
                       </h3>
 
