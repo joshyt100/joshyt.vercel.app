@@ -15,7 +15,6 @@ Built with modern web technologies: **React**, **Vite**, **TypeScript**, **MDX**
 - **Markdown Pages**: MDX for project case studies
 - **Routing**: React Router
 - **Hosting**: Vercel
-- **Analytics**: Vercel Analytics
 
 ---
 
