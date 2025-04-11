@@ -3,7 +3,7 @@
 Welcome to the source code for my personal portfolio website!  
 It highlights my technical skills, featured projects, and provides a gateway to connect with me.
 
-Built with modern web technologies: **React**, **Vite**, **TypeScript**, **MDX**, **TailwindCSS**, and **tsparticles**.
+Built with modern web technologies: **React**, **Vite**, **TypeScript**, **MDX**, and **TailwindCSS**
 
 ---
 
