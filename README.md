@@ -9,7 +9,7 @@ Built with modern web technologies: **React**, **Vite**, **TypeScript**, **MDX**
 
 ## 🛠 Tech Stack
 
-- **Frontend**: React + TypeScript + Vite
+- **Frontend**: React + Vite
 - **Styling**: TailwindCSS + Dark/Light theme toggle
 - **Animations**: `@tsparticles/react` for animated particle backgrounds
 - **Markdown Pages**: MDX for project case studies
