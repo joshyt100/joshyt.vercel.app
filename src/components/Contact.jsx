@@ -49,7 +49,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="min-h-screen bg-zinc-100 dark:bg-black text-white flex flex-col items-center justify-center   sm:p-8 "
+      className="min-h-screen bg-zinc-50 dark:bg-black text-white flex flex-col items-center justify-center   sm:p-8 "
 
     >
 
@@ -61,7 +61,7 @@ const Contact = () => {
       <form
         ref={formRef}
         onSubmit={sendEmail}
-        className="w-full max-w-full sm:max-w-2xl bg-white dark:bg-black border dark:border-zinc-800  z-20 py-6 px-6 rounded-lg shadow-2xl space-y-4  border-zinc-100"
+        className="w-full max-w-full sm:max-w-2xl bg-white dark:bg-black border dark:border-zinc-700  z-20 py-6 px-6 rounded-lg shadow-2xl space-y-4  border-zinc-100"
       >
         <div className="grid grid-cols-1 gap-4">
           <div>
@@ -72,7 +72,7 @@ const Contact = () => {
               type="text"
               id="first_name"
               name="first_name"
-              className="mt-1 block w-full bg-zinc-100 text-black dark:bg-zinc-950 opacity-100 rounded-md dark:text-white border border-zinc-200 dark:border-zinc-900  focus:border-blue-500 focus:ring-blue-500"
+              className="mt-1 block w-full bg-zinc-100 text-black dark:bg-zinc-950 opacity-100 rounded-md dark:text-white border border-zinc-200 dark:border-zinc-800  focus:border-blue-500 focus:ring-blue-500"
               placeholder="First name"
               required
             />
@@ -85,7 +85,7 @@ const Contact = () => {
               type="text"
               id="last_name"
               name="last_name"
-              className="mt-1 block w-full text-black bg-zinc-100 dark:bg-zinc-950 opacity-100 rounded-sm dark:text-white border border-zinc-200 dark:border-zinc-900 focus:border-blue-500 focus:ring-blue-500"
+              className="mt-1 block w-full text-black bg-zinc-100 dark:bg-zinc-950 opacity-100 rounded-sm dark:text-white border border-zinc-200 dark:border-zinc-800 focus:border-blue-500 focus:ring-blue-500"
               placeholder="Last name"
               required
             />
@@ -100,7 +100,7 @@ const Contact = () => {
             type="email"
             id="email"
             name="from_email"
-            className="mt-1 block w-full rounded-sm bg-zinc-100  dark:bg-zinc-950 dark:text-gray-300 opacity-100 text-black border border-zinc-200 dark:border-zinc-900 focus:border-blue-500 focus:ring-blue-500"
+            className="mt-1 block w-full rounded-sm bg-zinc-100  dark:bg-zinc-950 dark:text-gray-300 opacity-100 text-black border border-zinc-200 dark:border-zinc-800 focus:border-blue-500 focus:ring-blue-500"
             placeholder="Your email"
             required
           />
@@ -114,7 +114,7 @@ const Contact = () => {
             id="message"
             name="message"
             rows="4"
-            className="mt-1 block w-full rounded-sm bg-zinc-100 dark:bg-zinc-950 opacity-100 text-black dark:text-gray-300 border border-zinc-200 dark:border-zinc-900 focus:border-blue-500 focus:ring-blue-500"
+            className="mt-1 block w-full rounded-sm bg-zinc-100 dark:bg-zinc-950 opacity-100 text-black dark:text-gray-300 border border-zinc-200 dark:border-zinc-800 focus:border-blue-500 focus:ring-blue-500"
             placeholder="Your message"
             required
           ></textarea>

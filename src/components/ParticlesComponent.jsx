@@ -44,7 +44,7 @@ const ParticlesComponent = ({ id, theme }) => {
     () => ({
       background: {
         color: {
-          value: theme === "dark" ? "#000000" : "#ECECEE", // Dynamically set background color based on theme
+          value: theme === "dark" ? "#000000" : "#FAFAFA", // Dynamically set background color based on theme
         },
       },
       fpsLimit: isMobile ? 30 : 120,
