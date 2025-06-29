@@ -53,15 +53,15 @@ const Projects = () => {
     <div className="flex flex-col min-h-screen z-10">
       <section
         id="projects"
-        className="relative flex-grow p-0 md:p-2 xl:p-3 2xl:p-4 sm:pb-10 flex flex-col bg-transparent items-center"
+        className="relative flex-grow p-0 md:p-2 xl:p-3 2xl:p-4 sm:pb-0 flex flex-col bg-transparent items-center"
       >
         <div className="relative w-full z-10">
           <div className="rounded-xl  sm:p-6 md:p-8 lg:p-10  sm:pb-20 bg-blue-500/5 backdrop-blur-lg  dark:bg-black/20 dark:backdrop-blur-lg border border-zinc-200 dark:border-zinc-900">
             <div className="text-center mb-6 sm:mb-10">
-              <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl 2xl:text-[2.3rem] mt-4 font-semibold mb-3 sm:mb-4 md:mb-5 xl:mb-5  text-black dark:text-white">
+              <h2 className="text-2xl sm:text-3xl md:text-3xl lg:text-4xl 2xl:text-[2.3rem] mt-0 font-semibold mb-3 sm:mb-3 md:mb-3 xl:mb-3  text-black dark:text-white">
                 Projects
               </h2>
-              <p className="text-sm sm:text-base md:text-lg font-medium max-w-4xl mx-auto lg:text-lg 2xl:text-lg text-zinc-800 dark:text-zinc-300 leading-relaxed px-2">
+              <p className="text-sm sm:text-base md:text-md font-medium max-w-4xl mx-auto  text-zinc-800 dark:text-zinc-300 leading-relaxed px-2">
                 Explore some of my most exciting projects showcasing innovative
                 solutions and creativity.
               </p>
@@ -73,7 +73,7 @@ const Projects = () => {
                   key={index}
                   className="group relative bg-zinc-100/85 dark:bg-black shadow-2xl 
                           p-6 w-full rounded-xl
-                           duration-300 border sm:hover:scale-[1.03]   dark:border-zinc-800  flex flex-col"
+                           duration-300 border hover:bg-gray-200 sm:hover:bg dark:sm:hover:bg-gradient-to-tl from-indigo-950/40 to-black    dark:border-zinc-800  flex flex-col"
                 >
                   <div className="flex-grow">
                     <div className="flex justify-between items-start mb-4"> {/* Changed from items-center to items-start */}
@@ -97,12 +97,12 @@ const Projects = () => {
                   <div className="flex justify-end items-center">
                     <Link
                       to={project.link}
-                      className="inline-flex items-center gap-2 text-white dark:text-black  hover:text-indigo-500 dark:hover:text-indigo-500 border border-transparent hover:border-indigo-500 
+                      className="inline-flex items-center gap-2 text-white dark:text-black    border border-transparent  
                               font-semibold px-3 text-md py-2 xl:px-4 xl:text-base lg:py-3 rounded-lg 
                               duration-300"
                     >
-                      <span className="whitespace-nowrap text-indigo-700">View Project</span>
-                      <IoIosArrowRoundForward className="w-7 h-7 text-indigo-700" />
+                      <span className="whitespace-nowrap text-indigo-700 ">View Project</span>
+                      <IoIosArrowRoundForward className="w-7 h-7 text-indigo-700 " />
                     </Link>
                   </div>
                 </div>
