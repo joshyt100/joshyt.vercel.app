@@ -14,6 +14,8 @@ import MemberManagementDashboard from './projects-mdx/member-management-dashboar
 import DotFiles from './projects-mdx/dot_files.mdx';
 import CanadianExperience from './projects-mdx/canadian-experience.mdx';
 import PurchaseOrderSystem from './projects-mdx/purchase-order-system.mdx';
+import ShipFolio from './projects-mdx/shipfolio.mdx';
+import Hirelio from './projects-mdx/hirelio.mdx';
 import SkillsSection from './components/SkillsSection';
 import { Analytics } from '@vercel/analytics/react';
 function App() {
@@ -87,6 +89,8 @@ function App() {
         <Route path="/projects/dot-files" element={<DotFiles />} />
         <Route path="/projects/canadian-experience" element={<CanadianExperience />} />
         <Route path="/projects/purchase-order-system" element={<PurchaseOrderSystem />} />
+        <Route path="/projects/shipfolio" element={<ShipFolio />} />
+        <Route path="/projects/hirelio" element={<Hirelio />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/about" element={<About theme={theme} />} />
       </Routes>

@@ -53,7 +53,7 @@ const Contact = () => {
 
     >
 
-      <h2 className="text-4xl  font-semibold mb-6 mt-12 text-center text-black dark:text-white">Get in Touch</h2>
+      <h2 className="text-4xl  font-normal mb-6 mt-12 text-center text-black dark:text-white">Get in Touch</h2>
       <p className="text-lg text-black dark:text-white mb-8">
         Feel free to reach out for work opportunites, collaborations, or just a friendly chat!
       </p>

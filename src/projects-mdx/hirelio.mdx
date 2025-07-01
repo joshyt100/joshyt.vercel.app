@@ -1,0 +1,105 @@
+import React from 'react';
+import ProjectLayout from '../components/ProjectLayout';
+import CodeBlock from '../components/CodeBlock';
+
+<ProjectLayout
+  title="Hirelio"
+  description="A sleek, responsive dashboard for managing job applications & contacts, with AI-driven cover letters, real-time analytics, and optimized query performance."
+  githubLink="https://github.com/yourusername/hirelio"
+  techStack={[
+    'React',
+    'TypeScript',
+    'TailwindCSS',
+    'ShadCN UI',
+    'Django REST Framework',
+    'PostgreSQL',
+    'Redis',
+    'Docker',
+    'AWS S3',
+  ]}
+  features={[
+    'Modal-based CRUD for applications & contacts',
+    'AI cover-letter drafts',
+    'Interactive status & timeline charts',
+    'Sub-5ms paginated API endpoints',
+  ]}
+>
+  ## Overview
+
+  Hirelio brings job apps and contacts under one roof in a polished Tailwind + ShadCN interface. Dark/light themes, a collapsible sidebar, and dynamic tables make data entry and review a breeze.
+
+  ### Redis Caching Decorator
+
+  We profile with **Django Silk** and cache heavy GET endpoints:
+
+  <CodeBlock language="python">
+{`
+from functools import wraps
+from django.core.cache import cache
+from rest_framework.response import Response
+
+CACHE_TIMEOUT = 15 * 60  # 15m
+
+def cached_response(timeout=CACHE_TIMEOUT):
+    def decorator(fn):
+        @wraps(fn)
+        def wrapper(self, request, *args, **kwargs):
+            if request.method != "GET":
+                return fn(self, request, *args, **kwargs)
+            key = f"hirelio:{request.user.id}:{request.get_full_path()}"
+            data = cache.get(key)
+            if data:
+                return Response(data)
+            resp = fn(self, request, *args, **kwargs)
+            if resp.status_code == 200:
+                cache.set(key, resp.data, timeout)
+            return resp
+        return wrapper
+    return decorator
+`}
+  </CodeBlock>
+
+  ### Compound DB Indexes
+
+  To speed up filters & pagination, we added these to `JobApplication`:
+
+  <CodeBlock language="python">
+{`
+from django.db import models
+from django.db.models import Index
+
+class JobApplication(models.Model):
+    user = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+    status = models.CharField(max_length=50, db_index=True)
+    date_applied = models.DateField(db_index=True)
+
+    class Meta:
+        indexes = [
+            Index(fields=['user', '-date_applied', '-id']),
+            Index(fields=['user', 'status', '-date_applied']),
+        ]
+`}
+  </CodeBlock>
+
+  With these in place, queries for “my recent Open apps” complete in under 5 ms on large amounts of data.
+
+  ## Run Locally 🚀
+
+  1. **Clone & Install**  
+     ```bash
+     git clone https://github.com/yourusername/hirelio.git
+     cd hirelio
+     npm install
+     cd backend && pip install -r requirements.txt
+     ```
+
+  2. **Start**  
+     ```bash
+     docker-compose up --build
+     ```
+
+  3. **Browse**  
+     - Frontend: [http://localhost:3000](http://localhost:3000)  
+     - API:      [http://localhost:8000](http://localhost:8000)
+</ProjectLayout>
+

@@ -1,0 +1,120 @@
+import React from 'react';
+import ProjectLayout from '../components/ProjectLayout';
+import CodeBlock from '../components/CodeBlock';
+
+<ProjectLayout
+  title="ShipFolio"
+  description="Your GitHub, visualized: an interactive drag-and-drop dashboard with a virtualized PR list and contribution blocks, built to scale and share."
+  githubLink="https://github.com/joshyt100/shipfolio"
+  techStack={[
+    'Next.js 15 (Turbopack)',
+    'React',
+    'TailwindCSS',
+    'ShadCN UI',
+    'dnd-kit',
+    '@tanstack/react-virtual',
+    'Prisma',
+    'PostgreSQL',
+  ]}
+  features={[
+    'Drag-and-drop dashboard layout editor',
+    'Virtualized PR list for thousands of items',
+    'Hand-picked pull request showcase cards',
+    'Contribution streak & calendar heatmap',
+    'Server-side caching with Prisma & PostgreSQL',
+  ]}
+>
+  ## Overview
+
+  ShipFolio transforms your GitHub activity into a customizable dashboard. Rearrange widgets and Pull Requests with drag-and-drop, scroll massive PR lists smoothly with virtualization, and feature your best open-source contributions.
+
+  ### Drag & Drop Layout
+
+  We use **dnd-kit** for intuitive rearrangement:
+
+  <CodeBlock language="javascript">
+{`
+import { DndContext, closestCenter } from '@dnd-kit/core';
+import { SortableContext, arrayMove } from '@dnd-kit/sortable';
+
+<DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
+  <SortableContext items={layoutOrder}>
+    {layoutOrder.map(id => (
+      <Widget key={id} id={id} />
+    ))}
+  </SortableContext>
+</DndContext>
+
+function handleDragEnd(event) {
+  const { active, over } = event;
+  if (active.id !== over.id) {
+    setLayoutOrder(current =>
+      arrayMove(current, current.indexOf(active.id), current.indexOf(over.id))
+    );
+  }
+}
+`}
+  </CodeBlock>
+
+  ### Virtualized PR List
+
+  With **@tanstack/react-virtual**, we can render thousands of PR cards with minimal DOM nodes:
+
+  <CodeBlock language="javascript">
+{`
+import { useVirtualizer } from '@tanstack/react-virtual';
+
+const rowVirtualizer = useVirtualizer({
+  count: prItems.length,
+  getScrollElement: () => listRef.current,
+  estimateSize: () => 120,
+  overscan: 5,
+});
+
+return (
+  <div ref={listRef} className="overflow-auto h-96">
+    <div style={{ height: rowVirtualizer.getTotalSize() }}>
+      {rowVirtualizer.getVirtualItems().map(virtualRow => {
+        const pr = prItems[virtualRow.index];
+        return (
+          <div
+            key={pr.id}
+            style={{ transform: 'translateY(' + virtualRow.start + 'px)' }}
+          >
+            <PRCard pr={pr} />
+          </div>
+        );
+      })}
+    </div>
+  </div>
+);
+`}
+  </CodeBlock>
+
+  ### Local Development 🚀
+
+  1. **Clone**  
+     ```bash
+     git clone https://github.com/joshyt100/shipfolio.git
+     cd shipfolio
+     ```
+
+  2. **Install**  
+     ```bash
+     npm install
+     ```
+
+  3. **Env**  
+     Create `.env.local` with your GitHub token:
+     ```
+     GITHUB_GRAPHQL_ENDPOINT=https://api.github.com/graphql
+     GITHUB_TOKEN=your_token_here
+     ```
+
+  4. **Run**  
+     ```bash
+     npm run dev
+     ```
+
+</ProjectLayout>
+
